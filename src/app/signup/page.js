@@ -93,7 +93,7 @@ const Signupflow = ({ active, actions }) => {
             <div className={`flex justify-center flex-col transition-all duration-700 overflow-hidden ${active === 1 ? "w-full h-[250px] opacity-1" : "w-0 h-0 opacity-0"}`}>
                 <h2 htmlFor="code" className="break-none text-lg font-semibold mb-4" >Check your email</h2>
                 <p className="">We sent a 4-digit code to Johndoe@gmail.com</p>
-                <p className="">Please enter it below. Can't find it? Check your spam folder</p>
+                <p className="">Please enter it below. Can&apos;t find it? Check your spam folder</p>
                 <div className="flex gap-2 pt-4">
                     { [0,0,0,0].map((item, i) => (
                         <input key={i} type="text" id="code" name="codes" placeholder={item} onChange={(e) => setFullname(e.target.value)} className="w-[60px] text-center rounded-xl border border-gray-500/[0.2] mt-2 mb-8 p-[12px] focus:outline-2 focus:outline-primary hover:border-primary dark:bg-gray-900 " />
@@ -105,7 +105,7 @@ const Signupflow = ({ active, actions }) => {
             <div className={`flex justify-center flex-col transition-all duration-700 overflow-hidden ${active === 2 ? "w-full h-[250px] opacity-1" : "w-0 h-0 opacity-0"}`}>
                 <h2 htmlFor="code" className="break-none text-lg font-semibold mb-4" >Congratulations</h2>
                 <p className="">Your account has been created</p>
-                <p className="">Let's set-up your research recommendations. Please select the categories that suite you.</p>
+                <p className="">Let&apos;s set-up your research recommendations. Please select the categories that suite you.</p>
                 <div className="grid grid-cols-3 gap-2 pt-4 overflow-auto">
                     { ["Physics", "Mathematics", "Medicine", "Nanotechnology", "BioChemistry", "History", "Chemistry"].map((item, i) => (
                         <button key={i} className="text-center rounded-lg border border-gray-500/[0.3] p-[20px] hover:border-primary hover:text-primary dark:bg-gray-900 ">{item}</button>

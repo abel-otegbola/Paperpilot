@@ -82,7 +82,7 @@ export default function Signup() {
 
                     <button type="submit" onClick={(e) => submitForm(e)} className="flex justify-center items-center p-[13px] w-full bg-primary hover:bg-secondary text-white rounded my-[30px] transition-all duration-700">{loading ? <CgSpinner className="animate-spin" /> : ""} Sign in</button>
                     <div className="my-10 flex flex-wrap justify-between">
-                        <p>Don't have an Account? <a href="/signup" className="text-primary mt-3">Signup</a></p>
+                        <p>Don&apos;t have an Account? <a href="/signup" className="text-primary mt-3">Signup</a></p>
                     </div>
                 </div>
             </div>
