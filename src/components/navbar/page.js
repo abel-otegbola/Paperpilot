@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <div className="flex items-center justify-between md:px-[5%] p-4">
             <Link href="/" className="flex items-center text-lg font-bold gap-2">
-                <Image src="/logo.svg" width={30} height={30} /> 
+                <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
                 <h1 className="flex items-center">Paperpil<FaRegPaperPlane className="bg-primary text-white text-sm p-[2px] rounded-full" />t</h1>
             </Link>
 

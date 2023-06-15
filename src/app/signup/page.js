@@ -54,11 +54,11 @@ export default function Signup() {
         <div className="md:px-[5%] sm:py-[5%] dark:bg-gray-900">
             <div className="flex"> 
                 <div className="w-[50%] overflow-hidden md:block hidden relative bg-gray-800/[0.1]">
-                    <Image src="/woman_researcher.png" alt="woman researcher" className="object-cover" fill={true}/>
+                    <Image src="/woman_researcher.png" alt="researcher" className="object-cover" fill={true}/>
                 </div>
                 <div className="p-[20px] md:w-[50%] w-full md:px-[7%] md:py-[4%] py-[80px] bg-slate-100 dark:bg-gray-800 rounded" method="post">
                     
-                    <Image src="/logo.svg" width={30} height={30} /> 
+                    <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
                     <h1 className="py-6 text-primary text-2xl font-bold">Create Your Account</h1>
                     <p className="pb-5">Sign up to create and manage your recommendations</p>
 
