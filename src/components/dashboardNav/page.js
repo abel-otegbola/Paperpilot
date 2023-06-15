@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import {  FaRegPaperPlane, FaUserCircle } from 'react-icons/fa'
 import { FiBell, FiFilePlus, FiSettings, FiUserCheck, FiUsers } from 'react-icons/fi'
+import { signOut } from "next-auth/react";
 
 const DashboardNav = () => {
     const [open, setOpen] = useState(false)
@@ -44,7 +45,7 @@ const Sidebar = () => {
                 <Link href="/papers" className="flex items-center gap-3 hover:text-primary py-2"><FiUsers className="text-lg" /> <p>Invite members</p></Link>
             </div>
 
-            <button className="p-2 bg-slate-300/[0.1] rounded-sm hover:bg-primary hover:text-white w-full mt-6 text-left">Logout</button>
+            <button className="p-2 bg-slate-300/[0.1] rounded-sm hover:bg-primary hover:text-white w-full mt-6 text-left" onClick={() => signOut()}>Logout</button>
         </div>
     )
 }

@@ -1,12 +1,12 @@
 'use client'
-const { useSession } = "next-auth/react"
+import { useSession } from "next-auth/react"
 
 const Dashboard = () => {
     const {data:session} = useSession();
 
     return (
         <div className="px-[5%]">
-            <p>welcome {session.user.email}</p>
+            <p>welcome {session && session.user.email}</p>
         </div>
     )
 }

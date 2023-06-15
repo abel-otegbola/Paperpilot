@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaRegPaperPlane } from 'react-icons/fa'
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+    const {data: session} = useSession()
 
     // useEffect(() => {
     //     window.onload = () => {
@@ -29,10 +31,15 @@ const Navbar = () => {
                 <li><Link className="hover:text-primary px-6 py-2" href="/contact" >Contact</Link></li>
             </ul>
 
-            <div className="flex items-center">
-                <Link className="px-6" href="/login">Login</Link>
-                <Link className="px-[30px] py-[12px] rounded bg-gradient-to-b from-secondary to-primary text-white" href="/signup">Sign up</Link>
-            </div>
+                {
+                    session ?
+                    <Link className="px-[30px] py-[12px] rounded bg-gradient-to-b from-secondary to-primary text-white" href="/dashboard">Dashboard</Link> 
+                    :        
+                    <div className="flex items-center">
+                        <Link className="px-6" href="/login">Login</Link>
+                        <Link className="px-[30px] py-[12px] rounded bg-gradient-to-b from-secondary to-primary text-white" href="/signup">Sign up</Link>
+                    </div>
+            }
         </div>
     )
 }
