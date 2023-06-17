@@ -16,7 +16,7 @@ export default function RootLayout({ children, session }) {
 
   return (
     <html lang="en">
-      <body className={`${inter.className} text-[12px] dark:text-white/[0.8] dark:bg-dark`}>
+      <body className={`${inter.className} text-[13px] dark:text-white/[0.8] dark:bg-dark`}>
         <AuthProvider session={session}>
             
             {children}
