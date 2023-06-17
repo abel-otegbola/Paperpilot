@@ -12,19 +12,19 @@ const DashboardNav = () => {
     return (
         <div className="flex items-center justify-between md:px-[5%] p-4 bg-white dark:bg-transparent">
             <Link href="/" className="flex items-center text-lg font-bold gap-2">
-                <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
+                <Image src="/logo.svg" alt="paperpilot" width={25} height={25} /> 
                 <h1 className="flex items-center">Paperpil<FaRegPaperPlane className="bg-primary text-white text-sm p-[2px] rounded-full" />t</h1>
             </Link>
 
 
-            <div className="flex items-center p-1 pr-4 rounded-[40px] text-slate-500">
+            <div className="flex items-center p-1 pr-4 rounded-[40px] text-slate-500 dark:text-white/[0.8]">
                 <FiBell className="text-xl hover:text-primary/[0.6] mr-8" />
                 <FiSettings className="text-xl hover:text-primary/[0.6] mr-8"/>
                 <div className="relative">
                     <div className={`absolute top-[100%] right-0 transition-all duration-700 overflow-hidden ${open ? "h-[500px]" : "h-0"}`}>
                         <Sidebar  />
                     </div>
-                    <FaUserCircle className="text-3xl hover:text-primary/[0.6] text-orange-500/[0.4]" onClick={() => setOpen(!open)}/>
+                    <FaUserCircle className="text-3xl hover:text-primary/[0.6] text-primary/[0.4]" onClick={() => setOpen(!open)}/>
                 </div>
             </div>
         </div>
