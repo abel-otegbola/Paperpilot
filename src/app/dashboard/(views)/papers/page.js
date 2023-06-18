@@ -1,4 +1,5 @@
 'use client'
+import SearchBar from "@/components/searchBar/page";
 import { useSession } from "next-auth/react"
 import Link from "next/link";
 import { useEffect, useState } from "react"
@@ -6,14 +7,14 @@ import { FiPaperclip } from "react-icons/fi";
 
 
 
-const Dashboard = () => {
+const ResearchPapers = () => {
     const {data:session} = useSession();
     const [papers, setPapers] = useState([])
     const [query, setQuery] = useState(['Physics', 'Philosophy'])
     const [search, setSearch] = useState("covid")
 
     async function getData() {
-        const res = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&year=2020-2023&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors&limit=3`)
+        const res = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&year=2020-2023&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors`)
         // The return value is *not* serialized
         // You can return Date, Map, Set, etc.
     
@@ -31,13 +32,23 @@ const Dashboard = () => {
         .then(data => {setPapers(data.data); console.log(data)})
     }, [query, search])
 
+    const handleQuery = (category) => {
+        if(query.indexOf(category) !== -1) {
+            setQuery(query.filter(item => item !== category))
+        }
+        else {
+            setQuery([...query, category])
+        }
+    }
+
     return (
         <div className="p-4">
-            <h2 className="opacity-[0.3] font-semibold text-lg my-3">DASHBOARD</h2>
-            <p>Welcome: <span className="font-semibold">{session && session.user.name}</span></p>
+            <h2 className="opacity-[0.3] font-semibold text-lg my-3">DASHBOARD / RESEARCH PAPERS</h2>
+            <p>Find and download research papers</p>
 
             <div className="flex bg-white dark:bg-dark p-2 mt-5">
                 <div className="md:w-[65%]">
+                    <SearchBar query={query} handleQuery={handleQuery} />
                     <div className="my-4">
                         {papers && papers.map(paper => (
                             <div key={paper.paperId} className="flex gap-4 items-start p-4 border border-slate-400/[0.3] rounded my-1 w-full">
@@ -56,4 +67,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default ResearchPapers;
