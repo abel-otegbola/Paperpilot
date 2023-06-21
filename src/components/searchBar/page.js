@@ -15,11 +15,11 @@ const SearchBar = ({ query, actions, handleSearch }) => {
     }
 
     return (
-        <div className="flex items-center border border-slate-400/[0.2] px-1 pl-4">
+        <div className="flex items-center flex-wrap border border-slate-400/[0.2] px-1 pl-4">
             <FiSearch className="text-lg opacity-[0.5] mr-2" />
-            <input type="search" name="search" placeholder="Search papers..." onChange={(e) => actions.setSearch(e.target.value)} className="bg-transparent border-transparent p-4 rounded flex-1 focus:outline-2 focus:outline-primary hover:border-primary" />
+            <input type="search" name="search" placeholder="Search papers..." onChange={(e) => actions.setSearch(e.target.value)} className="flex-1 bg-transparent border-transparent p-4 rounded flex-1 focus:outline-2 focus:outline-primary hover:border-primary" />
             
-            <div className="relative flex items-center">
+            <div className="relative flex items-center md:w-auto w-full py-1">
                 <p className="p-2 px-4 border border-slate-400/[0.3] rounded cursor-pointer mr-1" onClick={() => setOpen(!open)}>Categories</p>
                 <select className="p-2 px-4 border border-slate-400/[0.3] rounded cursor-pointer mr-1" onClick={(e) => actions.setType(e.target.value)}>
                     <option>papers</option>
@@ -38,8 +38,8 @@ const SearchBar = ({ query, actions, handleSearch }) => {
                         </div>
                     </div>
                 </div>
+                <p className="p-2 px-4 rounde-[30px] border border-slate-400/[0.3] bg-primary text-white rounded cursor-pointer" onClick={handleSearch}>Search</p>
             </div>
-            <p className="p-2 px-4 rounde-[30px] border border-slate-400/[0.3] bg-primary text-white rounded cursor-pointer" onClick={handleSearch}>Search</p>
         </div>
     )
 }
