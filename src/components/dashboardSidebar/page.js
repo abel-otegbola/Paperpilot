@@ -16,7 +16,7 @@ const DashboardSidebar = ({ session }) => {
     const pathname = usePathname()
 
     return (
-        <div className="flex-col justify-between hidden md:flex w-[300px] bg-white dark:bg-dark">
+        <div className="md:flex top-2 h-screen flex-col justify-between hidden w-[300px] bg-white dark:bg-dark">
             <div>
                 <ul className="md:px-[8%] p-4 border border-transparent border-b-slate-500/[0.3]">
                     {
