@@ -1,6 +1,7 @@
 'use client'
 
 export default function Error({error, reset}) {
+
     return (
         <div className="flex-1 min-h-[50vh] flex flex-col justify-center items-center ">
             <h2 className="text-lg text-red-500 font-semibold mb-4">Something went wrong!</h2>

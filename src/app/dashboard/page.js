@@ -53,7 +53,17 @@ const Dashboard = () => {
                 <div className="md:w-[65%] w-full">
                     <SearchBar query={query} actions={{ setSearch, setQuery, setYear, setType }} handleSearch={handleSearch} />
                     <div className="my-4 relative">
-                        {papers && papers.map(paper => (
+
+                        <div className="absolute top-0 left-0 w-[96%] m-[2%] rounded border border-slate-400/[0.2] p-4 shadow-xl bg-white dark:bg-dark">
+                        {loading ? 
+                            <div className="min-h-[40vh] flex items-center justify-center" onClick={() => setError("")}><FiLoader className="animate-spin text-primary" /></div> 
+                            : error !== "" ?
+                            <>
+                                <FaTimes className="text-right text-primary text-xl" />
+                                <Error error={error} reset={handleSearch}/>
+                            </>
+                        :
+                        papers && papers.map(paper => (
                             <div key={paper.paperId} className="flex gap-4 items-start p-4 border border-slate-400/[0.3] rounded my-1 w-full">
                                 <p className="p-2 text-xl bg-primary/[0.4] text-primary rounded border border-primary"><FiPaperclip /></p>
                                 <div>
@@ -62,16 +72,7 @@ const Dashboard = () => {
                                     <p className="opacity-[0.6]">Year: {paper.year}</p>
                                 </div>
                             </div>
-                        ))}
-
-                        <div className="absolute top-0 left-0 w-[96%] m-[2%] rounded border border-slate-400/[0.2] p-4 shadow-xl bg-white dark:bg-dark">
-                            <FaTimes className="text-right text-primary text-xl" />
-                        {loading ? 
-                            <div className="min-h-[40vh] flex items-center justify-center"><FiLoader className="animate-spin text-primary" /></div> 
-                            : error !== "" ?
-                            <Error error={error} reset={handleSearch}/>
-                        :
-                        "" }
+                        )) }
                         </div>
                     </div>
                 </div>
