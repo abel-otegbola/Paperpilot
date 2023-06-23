@@ -22,7 +22,7 @@ const Dashboard = () => {
 
     const urls = [
              `https://api.semanticscholar.org/graph/v1/${type}/search?query=${search}&year=${year.join("-")}&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors`,
-            `http://api.springernature.com/openaccess/jats?${type === "paper" ? `q=subject:${query[0]} year:${year[1]}` : `name=${search}`}&api_key=${process.env.SPRINGER_API_KEY}`
+            `https://api.springernature.com/openaccess/jats?${type === "paper" ? `q=subject:${query[0]} year:${year[1]}` : `name=${search}`}&api_key=${process.env.SPRINGER_API_KEY}`
     ]
 
     async function getData() {
