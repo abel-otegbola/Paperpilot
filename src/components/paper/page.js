@@ -1,12 +1,8 @@
 'use client'
 import Link from "next/link";
-import { useEffect } from "react";
-import { FiBookOpen, FiBriefcase, FiFile, FiFilePlus, FiMessageSquare, FiPaperclip } from "react-icons/fi";
+import { FiFile, FiPaperclip } from "react-icons/fi";
 
-const Paper = ({ url, data }) => {
-    useEffect(() => {
-        console.log(url)
-    }, [url])
+const Paper = ({ data }) => {
 
     if (data !== [] && data[0]) {
         return (

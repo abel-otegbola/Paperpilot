@@ -28,24 +28,21 @@ const Dashboard = () => {
 
     async function getData() {
         setLoading(true)
-            const res = await fetch(urls[url], {
-                mode: "no-cors"
-            })
-            // Recommendation: handle errors
-            .catch(err => {
-                setError('Failed to fetch data')
-                setLoading(false)
-                setError("")
-                throw new Error("Failed to fetch data")
-            })
-        
+        const res = await fetch(urls[url])
+        // Recommendation: handle errors
+        .catch(err => {
+            setError('Failed to fetch data')
             setLoading(false)
-            return res.json()
+            setError("")
+            throw new Error("Failed to fetch data")
+        })
+        setLoading(false)
+        return res.json()
     }
 
     useEffect(() => {
         getData()
-        .then(data => {setPapers(!data.records ? data.data : data.records ); console.log(data)})
+        .then(data => {setPapers(!data.records ? data.data : data.records )})
     }, [])
 
 
@@ -57,7 +54,7 @@ const Dashboard = () => {
     return (
         <div className="p-4">
             <h2 className="opacity-[0.3] font-semibold text-lg my-3">DASHBOARD</h2>
-            <p>Welcome: <span className="font-semibold">{session && session.user.name}</span></p>
+            <p>Welcome: <span className="font-semibold">{session && session.user.name || session.user.email}</span></p>
 
             <div className="flex flex-wrap bg-white dark:bg-dark p-2 mt-5">
                 <div className="lg:w-[65%] w-full">
