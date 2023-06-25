@@ -54,7 +54,7 @@ const Dashboard = () => {
     return (
         <div className="p-4">
             <h2 className="opacity-[0.3] font-semibold text-lg my-3">DASHBOARD</h2>
-            <p>Welcome: <span className="font-semibold">{session && session.user.name || session.user.email}</span></p>
+            <p>Welcome: <span className="font-semibold">{session && session.user.name || session && session.user.email}</span></p>
 
             <div className="flex flex-wrap bg-white dark:bg-dark p-2 mt-5">
                 <div className="lg:w-[65%] w-full">
