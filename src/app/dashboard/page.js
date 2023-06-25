@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { FaArrowAltCircleRight, FaTimes } from "react-icons/fa";
 import { FiLoader, FiPaperclip } from "react-icons/fi";
 import Error from "./error";
+import Paper from "@/components/paper/page";
 
 
 
@@ -13,42 +14,44 @@ const Dashboard = () => {
     const {data:session} = useSession();
     const [papers, setPapers] = useState([])
     const [query, setQuery] = useState(['Physics', 'Philosophy'])
-    const [search, setSearch] = useState("covid")
+    const [search, setSearch] = useState("Hughes")
     const [year, setYear] = useState(["2022", "2023"])
     const [type, setType] = useState("paper")
-    const [url, setUrl] = useState("")
+    const [url, setUrl] = useState(0)
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
 
     const urls = [
-             `https://api.semanticscholar.org/graph/v1/${type}/search?query=${search}&year=${year.join("-")}&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors`,
-            `https://api.springernature.com/openaccess/jats?${type === "paper" ? `q=subject:${query[0]} year:${year[1]}` : `name=${search}`}&api_key=${process.env.SPRINGER_API_KEY}`
+        `https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&year=${year.join("-")}&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors,publicationTypes`,
+        `http://api.springernature.com/metadata/json?${type === "paper" ? `q=subject:${query[0]}` : `q=name:${search}`}&api_key=7be746c5cf49587e11473daa2929608c`
     ]
 
     async function getData() {
         setLoading(true)
-        const res = await fetch(urls[url])
-        // Recommendation: handle errors
-        .catch(err => {
-            setError('Failed to fetch data')
+            const res = await fetch(urls[url], {
+                mode: "no-cors"
+            })
+            // Recommendation: handle errors
+            .catch(err => {
+                setError('Failed to fetch data')
+                setLoading(false)
+                setError("")
+                throw new Error("Failed to fetch data")
+            })
+        
             setLoading(false)
-            setError("")
-            throw new Error("Failed to fetch data")
-        })
-    
-        setLoading(false)
-        return res.json()
+            return res.json()
     }
 
     useEffect(() => {
         getData()
-        .then(data => {setPapers(data.data); console.log(data)})
+        .then(data => {setPapers(!data.records ? data.data : data.records ); console.log(data)})
     }, [])
 
 
     const handleSearch = () => {
         getData()
-        .then(data => {setPapers(data.data); console.log(data)})
+        .then(data => {setPapers(!data.records ? data.data : data.records )})
     }
 
     return (
@@ -70,16 +73,7 @@ const Dashboard = () => {
                                     <Error error={error} reset={handleSearch}/>
                                 </>
                             :
-                            papers && papers.map(paper => (
-                                <div key={paper.paperId} className="flex gap-4 items-start p-4 border border-slate-400/[0.3] rounded my-1 w-full">
-                                    <p className="p-2 text-xl bg-primary/[0.4] text-primary rounded border border-primary"><FiPaperclip /></p>
-                                    <div>
-                                        <Link href={paper.title} className="font-semibold mb-2" >{paper.title}</Link>
-                                        <div>Authors: {paper.authors.slice(0,3).map(author => ( <span key={author.authorId}>{author.name},</span> ))}</div>
-                                        <p className="opacity-[0.6]">Year: {paper.year}</p>
-                                    </div>
-                                </div>
-                            )) }
+                            papers && <Paper url={url} data={papers}/> }
                         </div>
                     </div>
                 </div>

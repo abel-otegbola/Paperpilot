@@ -13,9 +13,12 @@ export default async function handler(req, res) {
         const checkexisting = await Users.findOne({ email });
         if(checkexisting) return res.status(422).json({ error: "User already exists" })
 
-        Users.create({ fullname, email, password: await hash(password, 12) }, function(err, data){
-            if(err) return res.status(404).json({ error: err });
-            res.status(200).json({ msg: "Signed up successfully", user: data })
+        Users.create({ fullname, email, password: await hash(password, 12), recommendations: "", papers: "" })
+        .then(result => {
+            res.status(200).json({ msg: "Signed up successfully", user: result })
+        })
+        .catch(err => {
+            res.status(400).json({ error: err })
         })
 
     }

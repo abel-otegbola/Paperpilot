@@ -52,7 +52,7 @@ const DashboardSidebar = ({ session }) => {
                             session.user.image ? 
                                 <img src={session.user.image} alt="user" className="rounded-full w-[35px] h-[35px] border border-primary" /> 
                             :
-                            <p className="p-2 text-lg bg-slate-200 dark:bg-slate-200/[0.3] rounded-full">{session.user.email.splice(0,2)}</p>
+                            <p className="p-2 text-lg bg-slate-200 dark:bg-slate-200/[0.3] rounded-full">a</p>
                         }
                     </div>
                     <div>

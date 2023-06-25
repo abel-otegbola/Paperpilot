@@ -5,6 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import connectMongo from "@/database/connection";
 import Users from "@/model/Schema";
 import { compare } from "bcryptjs";
+import { MongoClient } from "mongodb";
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -30,6 +31,7 @@ export const authOptions = {
       async authorize(credentials, req) {
         
         await connectMongo().catch(error => res.json({ error: "Connection Failed"}))
+        
         const res = await Users.findOne({ email: credentials.email })
     
         if(!res) {

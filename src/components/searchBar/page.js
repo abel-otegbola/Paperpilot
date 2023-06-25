@@ -43,14 +43,14 @@ const SearchBar = ({ query, actions, handleSearch }) => {
                 </div>
                 <div className="border border-transparent border-l-gray-500/[0.1] px-2">
                     <h4 className="mb-1 text-[11px] opacity-[0.6]">Search by author/paper:</h4>
-                    <select className="p-2 px-4 border border-slate-400/[0.3] rounded cursor-pointer mr-1" onClick={(e) => actions.setType(e.target.value)}>
+                    <select className="p-2 px-4 border border-slate-400/[0.3] rounded cursor-pointer mr-1" onChange={(e) => actions.setType(e.target.value)}>
                         <option>paper</option>
                         <option>author</option>
                     </select>
                 </div>
                 <div className="border border-transparent border-l-gray-500/[0.1] px-2">
                     <h4 className="mb-1 text-[11px] opacity-[0.6]">Search platform:</h4>
-                    <select className="p-2 px-4 border border-slate-400/[0.3] rounded cursor-pointer mr-1" onClick={(e) => actions.setUrl(e.target.value)}>
+                    <select className="p-2 px-4 border border-slate-400/[0.3] rounded cursor-pointer mr-1" onChange={(e) => actions.setUrl(e.target.value)}>
                         <option value={0}>Semantic scholar</option>
                         <option value={1}>Springer</option>
                     </select>
