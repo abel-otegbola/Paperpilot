@@ -22,7 +22,7 @@ const DashboardSidebar = ({ session }) => {
                     {
                         links.map(link => (
                             <li key={link.id} className="flex w-full px-3 py-1">
-                                <Link href={link.to} className={`flex items-center gap-4 w-full p-4 px-7 hover:bg-primary hover:text-white rounded ${pathname === link.to ? "bg-primary text-white" : ""}`}>
+                                <Link href={link.to} className={`flex items-center gap-4 w-full p-4 px-7 hover:bg-gradient-to-b from-fuchsia-600 to-primary hover:text-white  rounded ${pathname === link.to ? "bg-gradient-to-b from-fuchsia-600 to-primary text-white" : ""}`}>
                                     {link.icon}
                                     <p>{link.title}</p>
                                 </Link>
@@ -35,7 +35,7 @@ const DashboardSidebar = ({ session }) => {
                     {
                         links2.map(link => (
                             <li key={link.id} className="flex w-full px-3 py-1">
-                                <Link href={link.to} onClick={() => link.title === 'Logout' ? signOut() : ""} className={`flex items-center gap-4 w-full p-4 px-7 hover:bg-primary hover:text-white rounded ${pathname === link.to ? "bg-primary text-white" : ""}`}>
+                                <Link href={link.to} onClick={() => link.title === 'Logout' ? signOut() : ""} className={`flex items-center gap-4 w-full p-4 px-7 hover:bg-gradient-to-b from-fuchsia-600 to-primary hover:text-white  rounded ${pathname === link.to ? "bg-gradient-to-b from-fuchsia-600 to-primary text-white" : ""}`}>
                                     {link.icon}
                                     <p>{link.title}</p>
                                 </Link>
