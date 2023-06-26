@@ -41,7 +41,7 @@ export default function Signup() {
                 <div className="w-[50%] md:block hidden overflow-hidden relative bg-gray-800/[0.1]">
                     <Image src="/woman_researcher.png" alt="researcher" className="object-cover" fill={true}/>
                 </div>
-                <div className="p-[20px] md:w-[50%] w-full md:px-[12%] md:py-[7%] py-[80px] bg-slate-100 dark:bg-gray-800 rounded" method="post">
+                <div className="p-[20px] md:w-[50%] w-full md:px-[12%] md:py-[7%] py-[80px] bg-slate-100 dark:bg-gray-800 rounded">
                     
                     <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
                     <h1 className="py-3 text-primary text-2xl font-bold">Welcome!</h1>
@@ -78,7 +78,7 @@ export default function Signup() {
                         </div>
                     </div>
 
-                    <button type="submit" onClick={() => submitForm()} className="flex justify-center items-center p-[13px] w-full bg-primary hover:bg-secondary text-white rounded my-[20px] transition-all duration-700">{loading ? <CgSpinner className="animate-spin" /> : ""} Sign in</button>
+                    <button type="submit" onClick={() => submitForm()} className="flex justify-center items-center p-[13px] w-full bg-gradient-to-b from-fuchsia-600 to-primary hover:bg-secondary text-white rounded my-[20px] transition-all duration-700">{loading ? <CgSpinner className="animate-spin" /> : ""} Sign in</button>
                     <div className="mt-2 flex flex-col gap-2">
                         <p className="">Don&apos;t have an Account?</p>
                         <Link href="/signup" className="p-[10px] rounded border border-primary text-center w-100"> Signup</Link>

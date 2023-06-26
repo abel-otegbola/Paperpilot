@@ -97,7 +97,7 @@ export default function Signup() {
                             </div>
                         </div>
 
-                        <button type="submit" onClick={() => submitForm()} className={`flex justify-between items-center bg-primary hover:bg-secondary text-white rounded my-[10px] p-3 w-full`}><span className="flex-1 text-center">Signup</span>{loading ? <CgSpinner className="animate-spin" /> : ""} </button>
+                        <button type="submit" onClick={() => submitForm()} className={`flex justify-between items-center bg-gradient-to-b from-fuchsia-600 to-primary hover:bg-secondary text-white rounded my-[10px] p-3 w-full`}><span className="flex-1 text-center">Signup</span>{loading ? <CgSpinner className="animate-spin" /> : ""} </button>
                         <div className="mt-2 flex flex-col gap-2">
                             <p className="">Already have an Account?</p>
                             <Link href="/login" className="p-[10px] rounded border border-primary text-center w-100"> Signin</Link>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import {  FaBars, FaRegPaperPlane, FaUserCircle } from 'react-icons/fa'
-import { FiBell, FiFilePlus, FiSettings, FiUser, FiDatabase, FiHome } from 'react-icons/fi'
+import { FiBell, FiSettings, FiUser, FiDatabase, FiHome } from 'react-icons/fi'
 import { signOut } from "next-auth/react";
 
 const DashboardNav = () => {

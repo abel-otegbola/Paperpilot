@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="md:w-[30%] my-12">
                 <Link href="/" className="flex items-center text-lg font-bold mb-4 gap-2">
                     <Image src="/logo.svg" alt="paperpilot" width={25} height={25} /> 
-                    <h1 className="flex items-center">Paperpil<FaRegPaperPlane className="bg-primary text-white text-sm p-[2px] rounded-full" />t</h1>
+                    <h1 className="flex items-center">Paperpilot</h1>
                 </Link>
                 <p className="leading-[25px]">Your Personal Research Recommendation Engine - Get Curated Papers Delivered Straight to Your Inbox!</p>
             </div>
@@ -17,9 +17,7 @@ const Footer = () => {
                 <h2 className="uppercase pb-6">Navigations</h2>
                 <li className="py-3 w-full"><Link className="hover:text-primary hover:text-primary w-full py-6" href="/" >Home</Link></li>
                 <li className="py-3 w-full"><Link className="hover:text-primary w-full py-6" href="/features" >Features</Link></li>
-                <li className="py-3 w-full"><Link className="hover:text-primary w-full py-6" href="/papers" >Papers</Link></li>
                 <li className="py-3 w-full"><Link className="hover:text-primary w-full py-6" href="/about us" >About us</Link></li>
-                <li className="py-3 w-full"><Link className="hover:text-primary w-full py-6" href="/contact" >Contact</Link></li>
             </ul>
 
             <ul className="flex flex-col font-semibold md:w-auto sm:w-[50%] my-8 w-full">
