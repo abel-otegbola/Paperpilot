@@ -37,15 +37,15 @@ export default function Settings() {
 
             <SettingBox text={"Interface Theme"} subtext={"Use the default UI theme or Choose between light and dark theme."}>
                 <div className="flex flex-wrap gap-2">
-                    <button className={`flex items-center p-2 px-6 rounded ${theme === "theme" ? "bg-primary text-white" : "bg-gray-200 text-black"}`} onClick={() => handleDarkmode("theme")}>
+                    <button className={`flex items-center p-2 px-6 rounded ${theme === "theme" ? "bg-gradient-to-b from-fuchsia-600 to-primary text-white" : "bg-gray-200 text-black"}`} onClick={() => handleDarkmode("theme")}>
                         <FaEdit className="mr-2"/>
                         System preference
                     </button>
-                    <button className={`flex items-center p-2 px-6 rounded ${theme === "light" ? "bg-primary text-white" : "bg-gray-200 text-black"}`} onClick={() => handleDarkmode("light")}>
+                    <button className={`flex items-center p-2 px-6 rounded ${theme === "light" ? "bg-gradient-to-b from-fuchsia-600 to-primary text-white" : "bg-gray-200 text-black"}`} onClick={() => handleDarkmode("light")}>
                         <FaSun className="mr-2"/> 
                         Light
                     </button>
-                    <button className={`flex items-center p-2 px-6 rounded ${theme === "dark" ? "bg-primary text-white" : "bg-gray-200 text-black"}`} onClick={() => handleDarkmode("dark")}>
+                    <button className={`flex items-center p-2 px-6 rounded ${theme === "dark" ? "bg-gradient-to-b from-fuchsia-600 to-primary text-white" : "bg-gray-200 text-black"}`} onClick={() => handleDarkmode("dark")}>
                         <FaMoon className="mr-2"/> 
                         Dark
                     </button>

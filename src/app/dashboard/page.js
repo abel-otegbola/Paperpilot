@@ -81,12 +81,12 @@ const Dashboard = () => {
                     <div className="mb-6">
                     {
                         ["Physics", "Mathematics", "Chemistry", "Astrology"].map((item, i) => (
-                            <p key={i} className="p-4 border border-slate-200 my-1">{item}</p>
+                            <p key={i} className="p-4 border border-slate-400/[0.1] rounded my-1">{item}</p>
                         ))
                     }
                     </div>
 
-                    <Link href="/dashboard/recommendations" className="flex gap-2 items-center w-fit p-3 px-6 rounded bg-primary text-white"><span>Edit recommentations</span> <FaArrowAltCircleRight /></Link>
+                    <Link href="/dashboard/recommendations" className="flex gap-2 items-center w-fit p-[10px] px-6 rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white"><span>Edit recommentations</span> <FaArrowAltCircleRight /></Link>
                 </div>
             </div>
         </div>

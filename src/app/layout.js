@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/footer/page'
 import AuthProvider from '@/utils/authProvider'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,14 @@ export default function RootLayout({ children, session }) {
             {children}
             <Footer />
         </AuthProvider>
+
+        <Script id="darkmode" strategy="afterInteractive">
+          {`if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }`}
+        </Script>
       </body>
     </html>
   )

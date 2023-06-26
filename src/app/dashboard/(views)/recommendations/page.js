@@ -54,7 +54,7 @@ const Recommendations = () => {
                 </div>
             </SettingBox>
 
-            <button className="flex gap-2 items-center w-fit p-3 px-6 rounded bg-primary text-white"><FiSave /> Save</button>
+            <button className="flex gap-2 items-center w-fit p-[10px] px-6 rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white"><FiSave /> Save</button>
         </div>
     )
 }
