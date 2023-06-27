@@ -30,9 +30,9 @@ const Footer = () => {
 
             <ul className="flex flex-col font-semibold md:w-auto sm:w-[50%] my-8 w-full">
                 <h2 className="uppercase pb-6">Connect with us on socials</h2>
-                <li className="py-3 w-full"><Link className="flex gap-2 hover:text-primary w-full" href="/" ><FaFacebookSquare className="text-xl text-primary" /> Facebook</Link></li>
-                <li className="py-3 w-full"><Link className="flex gap-2 hover:text-primary w-full" href="/" ><FaTwitterSquare className="text-xl text-primary" /> Twitter</Link></li>
-                <li className="py-3 w-full"><Link className="flex gap-2 hover:text-primary w-full" href="/" ><FaInstagramSquare className="text-xl text-primary" /> Instagram</Link></li>
+                <li className="py-3 w-full"><Link className="flex gap-2 hover:text-primary w-full" href="/" ><FaFacebookSquare className="text-xl text-fuchsia-600" /> Facebook</Link></li>
+                <li className="py-3 w-full"><Link className="flex gap-2 hover:text-primary w-full" href="/" ><FaTwitterSquare className="text-xl text-fuchsia-600" /> Twitter</Link></li>
+                <li className="py-3 w-full"><Link className="flex gap-2 hover:text-primary w-full" href="/" ><FaInstagramSquare className="text-xl text-fuchsia-600" /> Instagram</Link></li>
             </ul>
         </div>
     )

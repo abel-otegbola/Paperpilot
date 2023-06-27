@@ -5,20 +5,13 @@ import { FaBars, FaUserCircle } from 'react-icons/fa'
 import { signOut, useSession } from "next-auth/react";
 import { useState } from "react";
 import { FiHome, FiInfo, FiPackage, FiSettings } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const {data: session} = useSession()
     const [open, setOpen] = useState(false)
+    const pathname = usePathname()
 
-    // useEffect(() => {
-    //     window.onload = () => {
-    //         google.accounts.id.initialize({
-    //             client_id: "",
-    //             callback: handleCredentialResponse
-    //         })
-    //         google.accounts.id.prompt();
-    //     }
-    // }, [])
 
     return (
         <div className="flex items-center justify-between md:px-[5%] p-4">
@@ -28,9 +21,9 @@ const Navbar = () => {
             </Link>
 
             <ul className="md:flex hidden md:items-center justify-center md:flex-row flex-col font-semibold">
-                <li><Link className="text-primary hover:text-primary px-6 py-2" href="/" >Home</Link></li>
-                <li><Link className="hover:text-primary px-6 py-2" href="/features" >Features</Link></li>
-                <li><Link className="hover:text-primary px-6 py-2" href="/about us" >About us</Link></li>
+                <li><Link className={`px-6 py-2 ${pathname === "/" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/" >Home</Link></li>
+                <li><Link className={`px-6 py-2 ${pathname === "features" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/features" >Features</Link></li>
+                <li><Link className={`px-6 py-2 ${pathname === "about" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/about" >About us</Link></li>
             </ul>
 
             {

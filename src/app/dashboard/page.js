@@ -56,7 +56,7 @@ const Dashboard = () => {
             <h2 className="opacity-[0.3] font-semibold text-lg my-3">DASHBOARD</h2>
             <p>Welcome: <span className="font-semibold">{session && session.user.name || session && session.user.email}</span></p>
 
-            <div className="flex flex-wrap bg-white dark:bg-dark p-2 mt-5">
+            <div className="flex flex-wrap bg-white dark:bg-dark mt-5">
                 <div className="lg:w-[65%] w-full">
                     <SearchBar query={query} actions={{ setSearch, setQuery, setYear, setType, setUrl }} handleSearch={handleSearch} />
                     <div className="my-4 min-h-[50vh]">

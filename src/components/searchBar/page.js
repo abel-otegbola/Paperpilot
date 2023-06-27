@@ -16,10 +16,10 @@ const SearchBar = ({ query, actions, handleSearch }) => {
 
     return (
         <div className="border border-slate-400/[0.2] px-2">
-            <div className="flex items-center">
+            <div className="flex items-center p-2">
                 <FiSearch className="text-lg opacity-[0.5] mr-2" />
-                <input type="search" name="search" placeholder="Search papers..." onChange={(e) => actions.setSearch(e.target.value)} className="flex-1 bg-transparent border-transparent p-4 rounded flex-1 focus:outline-2 focus:outline-primary hover:border-primary" />
-                <p className="p-2 px-6 rounded border border-slate-400/[0.3] bg-gradient-to-b from-fuchsia-600 to-primary text-white  text-white rounded cursor-pointer" onClick={handleSearch}>Search</p>
+                <input type="search" name="search" placeholder="Search papers..." onChange={(e) => actions.setSearch(e.target.value)} className="flex-1 bg-transparent border-transparent p-3 rounded flex-1 focus:outline-2 focus:outline-primary hover:border-primary" />
+                <p className="p-[10px] px-6 rounded border border-slate-400/[0.3] bg-gradient-to-b from-fuchsia-600 to-primary text-white  text-white rounded cursor-pointer" onClick={handleSearch}>Search</p>
             </div>
             <h4 className="opacity-[0.6] text-[11px] mt-2 mb-1 text-primary">Filter Search results:</h4>
             <div className="flex flex-wrap items-center w-full mb-2 p-1 bg-gray-400/[0.1]">
