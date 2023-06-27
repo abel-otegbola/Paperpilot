@@ -14,7 +14,7 @@ A next-js research website for timely and efficient delivery of research resourc
 - Clean user interface for easy interactivity
 - Dark and light mode
 
-visit live site [here](https://paperpilothub.netlify.app)
+visit live site [here](https://paperpilothub.vercel.app)
 
 ## Snapshots
 ![Screenshot_20230627-210939](https://github.com/abel-otegbola/Paperpilot/assets/59369762/de8ad999-8a54-42f7-8307-703c3acb2f94)
