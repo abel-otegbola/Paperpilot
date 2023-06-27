@@ -54,9 +54,10 @@ npm start
 
 
 ### credits
-- [Tailwind-css](https://tailwind.com)
-- [Redux](https://react-redux.js.org)
-- [React carousel](https://react-slick.neostack.com/docs/get-started)
+- [Tailwind-css](https://tailwindcss.com/docs/guides/nextjs)
+- [Semantic scholar](https://www.semanticscholar.org/)
+- [Springer API](https://dev.springernature.com)
+- [Next-js](https://nextjs.org)
 
 ### You may also like
 Check out my awesome [Timerz](https://github.com/abel-otegbola/Timerz) app built with react
