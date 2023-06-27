@@ -1,4 +1,4 @@
-![logo](https://github.com/abel-otegbola/Paperpilot/assets/59369762/b261be81-0665-47a7-ab50-d6ae4edb6322)
+![logo](https://github.com/abel-otegbola/Paperpilot/assets/59369762/3c7416b1-9a7a-4b1a-af37-f0860faac21c)
 
 
 ## (Paperpilot) Research papers recommendations website Application
@@ -11,8 +11,17 @@ A next-js research website for timely and efficient delivery of research resourc
 - Diverse research resources API
 - Advanced search functionality
 - Email delivery of user research recommendations
+- Clean user interface for easy interactivity
+- Dark and light mode
 
 visit live site [here](https://paperpilothub.netlify.app)
+
+## Snapshots
+![Screenshot_20230627-210939](https://github.com/abel-otegbola/Paperpilot/assets/59369762/de8ad999-8a54-42f7-8307-703c3acb2f94)
+![Screenshot_20230627-210903](https://github.com/abel-otegbola/Paperpilot/assets/59369762/23a699d7-a8bb-4562-baf9-f9286481b990)
+![Screenshot_20230627-210834](https://github.com/abel-otegbola/Paperpilot/assets/59369762/87a396eb-9b59-4ca5-a124-0f87103f321d)
+
+
 
 <hr>
 
@@ -60,4 +69,4 @@ npm start
 - [Next-js](https://nextjs.org)
 
 ### You may also like
-Check out my awesome [Timerz](https://github.com/abel-otegbola/Timerz) app built with react
+Check out my awesome [Mailme - endpoint generator website](https://github.com/abel-otegbola/mailme) app built with Next-js
