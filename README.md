@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![logo](https://github.com/abel-otegbola/Paperpilot/assets/59369762/b261be81-0665-47a7-ab50-d6ae4edb6322)
 
-## Getting Started
 
-First, run the development server:
+## (Paperpilot) Research papers recommendations website Application
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+A next-js research website for timely and efficient delivery of research resources. 
+<hr>
+
+# Features
+- User recommendations and preferences management
+- Diverse research resources API
+- Advanced search functionality
+- Email delivery of user research recommendations
+
+visit live site [here](https://paperpilothub.netlify.app)
+
+<hr>
+
+## How to use
+
+### Download
+Download the zip file and unzip into your computer.
+
+or
+
+
+### Clone this repository
+To clone and run this application, you'll need git and npm installed on your computer
+Download [Git](https://git-scm.com)
+
+open up your terminal and clone this repository
+
+```md
+git clone https://github.com/abel-otegbola/Paperpilot
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+open the folder 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```md
+cd Paperpilot
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install the dependencies by running
 
-## Learn More
+```md
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Once installed, run
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```md
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### credits
+- [Tailwind-css](https://tailwind.com)
+- [Redux](https://react-redux.js.org)
+- [React carousel](https://react-slick.neostack.com/docs/get-started)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### You may also like
+Check out my awesome [Timerz](https://github.com/abel-otegbola/Timerz) app built with react
