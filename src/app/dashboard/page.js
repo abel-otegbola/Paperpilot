@@ -44,7 +44,7 @@ const Dashboard = () => {
     useEffect(() => {
         getData()
         .then(data => {setPapers(!data.records ? data.data : data.records )})
-    }, [])
+    }, [getData])
 
 
     const handleSearch = () => {
