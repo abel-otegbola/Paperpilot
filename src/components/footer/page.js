@@ -4,7 +4,7 @@ import {FaFacebookSquare, FaTwitterSquare, FaInstagramSquare, FaRegPaperPlane} f
 
 const Footer = () => {
     return (
-        <div className="flex justify-between flex-wrap bg-dark text-white/[0.8] px-[5%] py-[40px]">
+        <div className="flex justify-between flex-wrap bg-dark text-white/[0.8] px-[5%] py-[40px] mt-8">
             <div className="md:w-[30%] my-12">
                 <Link href="/" className="flex items-center text-lg font-bold mb-4 gap-2">
                     <Image src="/logo.svg" alt="paperpilot" width={25} height={25} /> 
