@@ -15,7 +15,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="fixed top-0 left-0 w-full bg-white dark:bg-dark shadow-lg flex items-center justify-between md:px-[5%] p-4">
+        <div className="fixed top-0 left-0 w-full bg-white dark:bg-dark shadow flex items-center z-[100] justify-between px-[5%] md:p-2">
             <Link href="/" className="flex items-center text-lg font-semibold gap-2">
                 <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
                 <h1 className="flex items-center font-sans">Paperpilot</h1>
@@ -27,15 +27,17 @@ const Navbar = () => {
                 <li><Link className={`px-6 py-2 ${pathname === "about" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/about" >About us</Link></li>
             </ul>
 
+                <div className="md:flex items-center hidden gap-2">
             {
                 session ?
                     <Button link={"/dashboard"} text={"Dashboard"} type={"primary"} />
                 :        
-                <div className="md:flex items-center hidden gap-2">
-                    <Button link={"/login"} text={"Sign in"} type={"secondary"} />
-                    <Button link={"/signup"} text={"Create an account"} type={"primary"} />
-                </div>
+                    <>
+                        <Button link={"/login"} text={"Sign in"} type={"secondary"} />
+                        <Button link={"/signup"} text={"Create an account"} type={"primary"} />
+                    </>
             }
+                </div>
 
                 <div className="flex relative md:hidden">
                     <div className={`absolute top-[100%] right-0 transition-all duration-700 overflow-hidden z-[10] ${open ? "md:h-0 h-[500px]" : "h-0"}`}>
@@ -51,7 +53,7 @@ export default Navbar;
 
 const Sidebar = ({session}) => {
     return (
-        <div className="p-4 px-6 rounded shadow-lg bg-white dark:bg-dark rounded min-w-[250px]">
+        <div className="p-4 px-6 rounded shadow-lg bg-white dark:bg-dark z-[100] rounded min-w-[250px]">
             <Link href="/dashboard" className={`flex items-center gap-3 hover:text-primary py-2 ${session ? "flex" : "hidden"}`}><FiHome className="text-lg opacity-[0.6]" /> <p>Dashboard</p></Link>
 
             <div className="border border-transparent border-t-slate-400/[0.7] border-b-slate-400/[0.7] py-4 mt-4">
