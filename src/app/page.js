@@ -14,10 +14,10 @@ export default function Home() {
           <h1 className="md:text-[40px] text-3xl md:leading-[50px] leading-[40px] font-bold py-6">Personal Research Recommendation Engine - Get Curated Papers Delivered Straight to Your Inbox</h1>
           <p className="opacity-[0.8] mb-8 md:w-[80%] leading-[25px]">Navigating the Skies of Research with Personalized Recommendations, Seamless Automation, and Timely Delivery of Relevant Papers for Your Intellectual Voyage.</p>
           
-          <Button link={"/signup"} text={"EGet Started"} type={"primary"} />
+          <Button link={"/signup"} text={"Get Started"} type={"primary"} />
 
         </div>
-        <Image src="/bg.png" className='md:mt-[20px] my-[50px]' width={600} height={700} alt="paperpilot"/>
+        <Image src="/bg.png" className='md:mt-[20px] my-[50px]' width={600} height={700} alt="woman wearing shirt smiling"/>
       </header>
 
       <section className="flex flex-wrap justify-between py-[7%] px-[5%]">
@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='px-[5%] md:flex justify-center'>
+      <section className='px-[5%] py-[30px] md:flex justify-center'>
         <div className='md:max-w-[60%]'>
 
           <p className="opacity-[0.8]"></p>
@@ -60,7 +60,7 @@ export default function Home() {
         <Image src="/recommendations.png" className='md:mt-[20px] my-[50px]' width={400} height={500} alt="recommendations"/>
       </section>
 
-      <section className='px-[5%] flex md:flex-row flex-col justify-center'>
+      <section className='px-[5%] py-[30px] flex md:flex-row flex-col justify-center'>
         <Image src="/diverse_content.png" className='md:mt-[20px] my-[50px] md:order-1 order-2 ' width={400} height={500} alt="diverse contents"/>
         <div className=' md:pl-[5%] md:max-w-[60%] md:order-2 order-1'>
 
