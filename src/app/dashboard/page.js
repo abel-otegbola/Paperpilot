@@ -24,7 +24,7 @@ const Dashboard = () => {
 
     const urls = [
         `https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&year=${year.join("-")}&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors,publicationTypes`,
-        `${process.env.NEXT_PUBLIC_SPRINGER_URL}metadata/json?${type === "paper" ? `q=subject:${query[0]}` : `q=name:${search}`}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`
+        `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?${type === "paper" ? `q=subject:${query[0]}` : `q=name:${search}`}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`
     ]
 
     async function getData() {
