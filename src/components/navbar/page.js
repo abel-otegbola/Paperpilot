@@ -31,10 +31,10 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
                 {
                     session ?
-                        <div className="flex items-center p-1 rounded-[40px] text-slate-500 dark:text-white/[0.8]">
-                            <Link href="/dashboard/notifications"><FiBell className="text-xl hover:text-primary/[0.6] mr-8" /></Link>
-                            <Link href="/dashboard/settings"><FiSettings className="text-xl hover:text-primary/[0.6] mr-8"/></Link>
-                            <Link href="/dashboard"><FaUserCircle className="text-2xl hover:text-primary/[0.6] md:mr-0 mr-8"/></Link>
+                        <div className="flex items-center gap-6 rounded-[40px] text-slate-500 dark:text-white/[0.8]">
+                            <Link href="/dashboard/notifications"><FiBell className="text-xl hover:text-primary/[0.6]" /></Link>
+                            <Link href="/dashboard/settings"><FiSettings className="text-xl hover:text-primary/[0.6]"/></Link>
+                            <Link href="/dashboard"><FaUserCircle className="text-2xl hover:text-primary/[0.6] md:mr-0"/></Link>
                         </div>
                     :        
                         <div className="md:flex hidden items-center gap-2">
@@ -47,7 +47,7 @@ const Navbar = () => {
                     <div className={`absolute top-[100%] right-0 transition-all duration-700 overflow-hidden z-[10] ${open ? "md:h-0 h-[500px]" : "h-0"}`}>
                         <NavMenu />
                     </div>
-                    <FaBars className="text-3xl p-1 hover:text-primary/[0.6]" onClick={() => setOpen(!open)} />
+                    <FaBars className="text-3xl hover:text-primary/[0.6]" onClick={() => setOpen(!open)} />
                 </div>
             </div>
         </div>

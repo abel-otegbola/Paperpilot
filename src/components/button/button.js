@@ -1,3 +1,4 @@
+'use client'
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 
@@ -6,7 +7,7 @@ const Button = ({ link, role, text, type, icon }) => {
     <>
       <Link
         href={link}
-        onClick={() => role ? signOut() : ""}
+        onClick={() => role === "logout" ? signOut() : {}}
         className={`flex items-center gap-2 px-6 w-fit bg-slate-300/[0.1] rounded ${
           type === "primary"
             ? "bg-gradient-to-b from-fuchsia-600 to-primary text-white p-[12px]"

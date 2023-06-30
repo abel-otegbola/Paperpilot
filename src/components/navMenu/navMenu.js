@@ -26,7 +26,7 @@ const NavMenu = () => {
                 }
             </div>
 
-            <Button link={session ? "#" : "/signup"} role={session ? "logout" : null} text={session ? "Logout" : "Create an account"} type={"primary"} />
+            <Button link={session ? "#" : "/signup"} role={session ? "logout" : "none"} text={session ? "Logout" : "Create an account"} type={"primary"} />
         </div>
     )
 }
