@@ -5,7 +5,7 @@ import { FiCpu, FiDatabase, FiUserCheck } from 'react-icons/fi'
 export default function Home() {
   return (
     <main className="">
-      <header className="md:flex min-h-[500px] bg-[url('/bg.svg')] bg-cover items-center justify-center px-[5%] py-[40px]">
+      <header className="md:flex bg-[url('/bg.svg')] bg-cover items-center justify-center px-[5%] py-[40px]">
         <div className='py-[5%]'>
 
           <p className="opacity-[0.8]">Personalized Recommendations, Seamless Automation, Configurable Interests</p>
@@ -15,7 +15,7 @@ export default function Home() {
           <Link className="px-[30px] py-[15px] sm:w-auto w-full text-center rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white hover:from-primary hover:to-primary" href="/signup">Get Started</Link>
 
         </div>
-        <Image src="/bg.png" className='md:mt-[20px] my-[50px]' width={600} height={300} alt="paperpilot"/>
+        <Image src="/bg.png" className='md:mt-[20px] my-[50px]' width={600} height={700} alt="paperpilot"/>
       </header>
 
       <section className="flex flex-wrap justify-between py-[7%] px-[5%]">

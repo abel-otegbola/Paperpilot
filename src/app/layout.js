@@ -1,8 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/footer/page'
-import AuthProvider from '@/utils/authProvider'
 import Script from 'next/script'
+import Navbar from '@/components/navbar/page'
+import AuthProvider from '@/utils/authProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,7 @@ export default function RootLayout({ children, session }) {
     <html lang="en">
       <body className={`${inter.className} text-[13px] mt-[60px] dark:text-white/[0.8] dark:bg-dark`}>
         <AuthProvider session={session}>
-            
+            <Navbar />
             {children}
             <Footer />
         </AuthProvider>
