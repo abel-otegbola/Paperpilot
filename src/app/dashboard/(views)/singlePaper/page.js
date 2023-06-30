@@ -26,7 +26,7 @@ const SinglePaper = () => {
     useEffect(() => {
         getData()
         .then(data => {setPaper(!data.records ? data : data.records ); console.log(data)})
-    }, [])
+    }, [getData])
 
     return (
         <div className="p-4">
