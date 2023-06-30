@@ -22,7 +22,7 @@ const SearchBar = ({ query, actions, handleSearch }) => {
                 <p className="p-[10px] px-6 rounded border border-slate-400/[0.3] bg-gradient-to-b from-fuchsia-600 to-primary text-white  text-white rounded cursor-pointer" onClick={handleSearch}>Search</p>
             </div>
             <h4 className="opacity-[0.6] text-[11px] mt-2 mb-1 text-primary">Filter Search results:</h4>
-            <div className="flex flex-wrap items-center w-full mb-2 p-1 bg-gray-400/[0.1]">
+            <div className="flex flex-wrap items-center w-full mb-2 p-2 bg-gray-400/[0.1]">
                 
                 <div className="relative border border-transparent border-l-gray-500/[0.1] px-2">
                     <h4 className="mb-1 text-[11px] opacity-[0.6]">Categories:</h4>

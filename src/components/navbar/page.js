@@ -1,11 +1,12 @@
 'use client'
 import Link from "next/link";
 import Image from "next/image";
-import { FaBars, FaUserCircle } from 'react-icons/fa'
+import { FaBars } from 'react-icons/fa'
 import { signOut, useSession } from "next-auth/react";
 import { useState } from "react";
 import { FiHome, FiInfo, FiPackage, FiSettings } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import Button from "../button/button";
 
 const Navbar = () => {
     const {data: session} = useSession()
@@ -14,7 +15,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="flex items-center justify-between md:px-[5%] p-4">
+        <div className="fixed top-0 left-0 w-full bg-white dark:bg-dark shadow-lg flex items-center justify-between md:px-[5%] p-4">
             <Link href="/" className="flex items-center text-lg font-semibold gap-2">
                 <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
                 <h1 className="flex items-center font-sans">Paperpilot</h1>
@@ -28,11 +29,11 @@ const Navbar = () => {
 
             {
                 session ?
-                <Link className="md:block hidden px-[30px] py-[10px] rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white" href="/dashboard">Dashboard</Link> 
+                    <Button link={"/dashboard"} text={"Dashboard"} type={"primary"} />
                 :        
                 <div className="md:flex items-center hidden gap-2">
-                    <Link className="px-6 py-[10px] rounded text-primary bg-primary/[0.1] border border-primary" href="/login">Sign in</Link>
-                    <Link className="px-[30px] py-[10px] rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white border border-primary" href="/signup">Create an account</Link>
+                    <Button link={"/login"} text={"Sign in"} type={"secondary"} />
+                    <Button link={"/signup"} text={"Create an account"} type={"primary"} />
                 </div>
             }
 
@@ -63,9 +64,9 @@ const Sidebar = ({session}) => {
             <div className="mt-3 flex">
             {
                 session ?
-                <button className={`p-2 px-4 bg-slate-300/[0.1] rounded-sm bg-gradient-to-b from-fuchsia-600 to-primary hover:bg-primary hover:text-white w-full mt-6 text-left`} onClick={() => signOut()}>Logout</button>
+                <Button link={"#"} role={"logout"} text={"Logout"} type={"secondary"} />
                 :
-                <Link href="/signup" className={`p-[10px] px-4 bg-slate-300/[0.1] rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white hover:bg-primary hover:text-white w-full text-left`}>Create an account</Link>
+                <Button link={"/signup"} text={"Create an account"} type={"primary"} />
 
             }
             </div>

@@ -10,7 +10,7 @@ const DashboardNav = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="flex items-center justify-between md:px-[5%] p-4 bg-white dark:bg-transparent">
+        <div className="fixed top-0 left-0 w-full flex items-center justify-between md:px-[5%] p-4 bg-white dark:bg-transparent">
             <Link href="/" className="flex items-center text-lg font-bold gap-2">
                 <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
                 <h1 className="flex items-center">Paperpilot</h1>

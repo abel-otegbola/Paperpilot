@@ -7,6 +7,7 @@ import { FaArrowAltCircleRight, FaTimes } from "react-icons/fa";
 import { FiLoader, FiPaperclip } from "react-icons/fi";
 import Error from "./error";
 import Paper from "@/components/paper/page";
+import Button from "@/components/button/button";
 
 
 
@@ -23,7 +24,7 @@ const Dashboard = () => {
 
     const urls = [
         `https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&year=${year.join("-")}&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors,publicationTypes`,
-        `http://api.springernature.com/metadata/json?${type === "paper" ? `q=subject:${query[0]}` : `q=name:${search}`}&api_key=7be746c5cf49587e11473daa2929608c`
+        `http://api.springernature.com/metadata/json?${type === "paper" ? `q=subject:${query[0]}` : `q=name:${search}`}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`
     ]
 
     async function getData() {
@@ -61,9 +62,9 @@ const Dashboard = () => {
                     <SearchBar query={query} actions={{ setSearch, setQuery, setYear, setType, setUrl }} handleSearch={handleSearch} />
                     <div className="my-4 min-h-[50vh]">
 
-                        <div className="rounded border border-slate-400/[0.2] p-4 bg-white dark:bg-dark">
+                        <div className="rounded border border-slate-400/[0.2] bg-white dark:bg-dark">
                             {loading ? 
-                                <div className="min-h-[40vh] flex items-center justify-center" onClick={() => setError("")}><FiLoader className="animate-spin text-primary" /></div> 
+                                <div className="min-h-[40vh] flex items-center justify-center" onClick={() => setError("")}><FiLoader className="animate-spin text-primary text-2xl" /></div> 
                                 : error !== "" ?
                                 <>
                                     <FaTimes onClick={() => setError("")} className="text-right text-primary text-xl" />
@@ -86,7 +87,7 @@ const Dashboard = () => {
                     }
                     </div>
 
-                    <Link href="/dashboard/recommendations" className="flex gap-2 items-center w-fit p-[10px] px-6 rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white"><span>Edit recommentations</span> <FaArrowAltCircleRight /></Link>
+                    <Button link={"/dashboard/recommendations"} text={"Edit Recommendations"} type={"primary"} icon={<FaArrowAltCircleRight />} />
                 </div>
             </div>
         </div>
