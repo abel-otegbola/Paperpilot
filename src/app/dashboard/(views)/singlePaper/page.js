@@ -19,7 +19,7 @@ const SinglePaper = () => {
 
     async function getData() {
         setLoading(true)
-        const res = await fetch(source === "semantic" ? `https://api.semanticscholar.org/graph/v1/paper/${id}?fields=title,url,year,authors,abstract,openAccessPdf,fieldsOfStudy,publicationTypes,publicationDate` : `http://api.springernature.com/metadata/json?q=doi:${id}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`)
+        const res = await fetch(source === "semantic" ? `https://api.semanticscholar.org/graph/v1/paper/${id}?fields=title,url,year,authors,abstract,openAccessPdf,fieldsOfStudy,publicationTypes,publicationDate` : `${process.env.NEXT_PUBLIC_SPRINGER_URL}metadata/json?q=doi:${id}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`)
         // Recommendation: handle errors
         .catch(err => {
             setError('Failed to fetch data')
