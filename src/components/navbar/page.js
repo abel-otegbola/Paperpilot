@@ -37,7 +37,7 @@ const Navbar = () => {
                             <Link href="/dashboard"><FaUserCircle className="text-2xl hover:text-primary/[0.6] md:mr-0 mr-8"/></Link>
                         </div>
                     :        
-                        <div className="flex items-center gap-2">
+                        <div className="md:flex hidden items-center gap-2">
                             <Button link={"/login"} text={"Sign in"} type={"secondary"} />
                             <Button link={"/signup"} text={"Create an account"} type={"primary"} />
                         </div>
