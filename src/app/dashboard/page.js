@@ -1,10 +1,9 @@
 'use client'
 import SearchBar from "@/components/searchBar/page";
 import { useSession } from "next-auth/react"
-import Link from "next/link";
 import { useEffect, useState } from "react"
 import { FaArrowAltCircleRight, FaTimes } from "react-icons/fa";
-import { FiLoader, FiPaperclip } from "react-icons/fi";
+import { FiLoader } from "react-icons/fi";
 import Error from "./error";
 import Paper from "@/components/paper/page";
 import Button from "@/components/button/button";
