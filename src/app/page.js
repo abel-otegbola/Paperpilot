@@ -5,13 +5,16 @@ import { FiCpu, FiDatabase, FiUserCheck } from 'react-icons/fi'
 export default function Home() {
   return (
     <main className="px-[5%]">
-      <header className="flex flex-col min-h-[500px] bg-[url('/bg.svg')] bg-cover items-center justify-center py-[40px] md:px-[7%]">
-        <p className="opacity-[0.8] text-center">Personalized Recommendations, Seamless Automation, Configurable Interests</p>
-        <h1 className="md:text-[40px] text-2xl text-center md:leading-[50px] leading:-[20px] font-bold py-6 md:w-[83%]">Personal Research Recommendation Engine - Get Curated Papers Delivered Straight to Your Inbox</h1>
-        <p className="opacity-[0.8] mb-6 md:w-[60%] text-center leading-[25px]">Navigating the Skies of Research with Personalized Recommendations, Seamless Automation, and Timely Delivery of Relevant Papers for Your Intellectual Voyage.</p>
-        
-        <Link className="px-[30px] py-[15px] sm:w-auto w-full text-center rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white hover:from-primary hover:to-primary" href="/signup">Get Started</Link>
+      <header className="md:flex min-h-[500px] bg-[url('/bg.svg')] bg-cover items-center justify-center py-[40px] md:px-[7%]">
+        <div className='py-[5%]'>
 
+          <p className="opacity-[0.8] text-center">Personalized Recommendations, Seamless Automation, Configurable Interests</p>
+          <h1 className="md:text-[40px] text-2xl text-center md:leading-[50px] leading:-[20px] font-bold py-6 md:w-[83%]">Personal Research Recommendation Engine - Get Curated Papers Delivered Straight to Your Inbox</h1>
+          <p className="opacity-[0.8] mb-6 md:w-[60%] text-center leading-[25px]">Navigating the Skies of Research with Personalized Recommendations, Seamless Automation, and Timely Delivery of Relevant Papers for Your Intellectual Voyage.</p>
+          
+          <Link className="px-[30px] py-[15px] sm:w-auto w-full text-center rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white hover:from-primary hover:to-primary" href="/signup">Get Started</Link>
+
+        </div>
         <Image src="/paperpilot_bg.svg" className='mt-[40px]' width={700} height={400} alt="paperpilot"/>
       </header>
 
