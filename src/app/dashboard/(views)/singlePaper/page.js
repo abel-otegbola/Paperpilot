@@ -39,7 +39,7 @@ const SinglePaper = () => {
                 const {publicationName: title, creators, subjects: fieldsOfStudy, abstract, publicationDate: year, contentType, url, publicationType, publicationDate} = data.records[0];
                 setPaper({title, authors: creators.map((item, i) => ({ authorId: i, name: item.creator }) ), fieldsOfStudy, abstract, year, publicationDate, openAccessPdf:{url: url[0].value}, publicationTypes: [contentType, publicationType], })
             } 
-            console.log(data.records[0])
+            console.log(data)
         })
     }, [])
 
@@ -60,7 +60,7 @@ const SinglePaper = () => {
                     <div className="flex flex-wrap items-center gap-6 py-2">
                         <p className="font-semibold text-primary">AUTHORS:</p>
                         {
-                            paper.authors && paper.authors.slice(0,3).map(author => (
+                            paper.authors?.slice(0,3).map(author => (
                                 <div key={author.authorId} className="flex items-center gap-1">
                                     <p className="p-2 py-1 rounded-full font-bold bg-green-300">{author.name.slice(0,1)}</p>
                                     <p className="font-semibold">{author.name}</p>
@@ -71,7 +71,7 @@ const SinglePaper = () => {
                     </div>
                     <div className="flex flex-wrap items-center gap-2 py-2">
                         {
-                            paper.fieldsOfStudy.map((field,i) => (
+                            paper.fieldsOfStudy?.map((field,i) => (
                                 <p key={i} className="px-4 py-2 rounded-[30px] text-[10px] bg-slate-300/[0.2] border border-slate-300">{field}</p>
                             ))
                         }
@@ -85,7 +85,7 @@ const SinglePaper = () => {
                         <div className="flex items-center gap-4 leading-[25px] py-4 border border-transparent border-y-slate-500/[0.1]">
                             <p className="flex items-center opacity-[0.7] gap-2"><FiCalendar className="p-2 rounded bg-slate-300/[0.1] text-3xl" /> {paper.publicationDate}</p>
                             <Link className="flex items-center opacity-[0.7] gap-2" href={paper.openAccessPdf ? paper.openAccessPdf.url : "#"}><FaDownload className="p-2 rounded bg-slate-300/[0.1] text-3xl"/> Download</Link>
-                            <p className="flex items-center opacity-[0.7] gap-2"><FiPaperclip className="p-2 rounded bg-slate-300/[0.1] text-3xl" /> {paper.publicationTypes && paper.publicationTypes.map((item, i) => ( <span key={i}> {item} </span> ))}</p>                            
+                            <p className="flex items-center opacity-[0.7] gap-2"><FiPaperclip className="p-2 rounded bg-slate-300/[0.1] text-3xl" /> {paper.publicationTypes?.map((item, i) => ( <span key={i}> {item} </span> ))}</p>                            
                         </div>                        
                     </div>
                 </div>

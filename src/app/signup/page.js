@@ -68,8 +68,8 @@ export default function Signup() {
                         <p className="pb-5">Sign up to create and manage your recommendations</p>
 
                         {/* Show success message */}
-                        { success !== "" ? <p className="my-2 text-green-500 p-4 text-center flex justify-between items-center rounded bg-green-200/[0.5]">{success}<FaTimesCircle onClick={() => setSuccess("")} /></p> : "" }
-                        { error !== "" ? <p className="my-2 text-red-500 p-4 text-center flex justify-between items-center rounded bg-red-200/[0.5]">{error}<FaTimesCircle onClick={() => setError("")} /></p> : "" }
+                        { success !== "" ? <p className="my-2 text-green-500 p-4 text-center flex justify-between items-center rounded bg-green-400/[0.1]">{success}<FaTimesCircle onClick={() => setSuccess("")} /></p> : "" }
+                        { error !== "" ? <p className="my-2 text-red-500 p-4 text-center flex justify-between items-center rounded bg-red-400/[0.1]">{error}<FaTimesCircle onClick={() => setError("")} /></p> : "" }
                         
                         <div className={`transition-all duration-700 overflow-hidden`}>
                             <div className="mb-4">

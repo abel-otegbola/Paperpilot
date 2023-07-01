@@ -62,8 +62,8 @@ export default function Signup() {
                     <p className="font-bold text-purple-500 text-center my-2">OR</p>
 
                     {/* Show success message */}
-                    { success !== "" ? <p className="my-2 text-green-500 p-4 text-center flex justify-between items-center rounded bg-green-200/[0.5]">{success}<FaTimesCircle onClick={() => setSuccess("")}/></p> : "" }
-                    { error !== "" ? <p className="my-2 text-red-500 p-4 text-center flex justify-between items-center rounded bg-red-200/[0.5]">{error}<FaTimesCircle onClick={() => setError("")} /></p> : "" }
+                    { success !== "" ? <p className="my-2 text-green-500 p-4 text-center flex justify-between items-center rounded bg-green-400/[0.1]">{success}<FaTimesCircle onClick={() => setSuccess("")}/></p> : "" }
+                    { error !== "" ? <p className="my-2 text-red-500 p-4 text-center flex justify-between items-center rounded bg-red-400/[0.1]">{error}<FaTimesCircle onClick={() => setError("")} /></p> : "" }
                     
 
                     <label className="mb-2" htmlFor="email" >Email Address:</label>

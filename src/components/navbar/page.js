@@ -47,7 +47,7 @@ const Navbar = () => {
                     <div className={`absolute top-[100%] right-0 transition-all duration-700 overflow-hidden z-[10] ${open ? "md:h-0 h-[500px]" : "h-0"}`}>
                         <NavMenu />
                     </div>
-                    <FaBars className="text-3xl hover:text-primary/[0.6] ml-2" onClick={() => setOpen(!open)} />
+                    <FaBars className="text-xl hover:text-primary/[0.6] ml-3" onClick={() => setOpen(!open)} />
                 </div>
             </div>
         </div>
