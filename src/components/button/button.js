@@ -12,7 +12,7 @@ const Button = ({ link, role, text, type, icon }) => {
           type === "primary"
             ? "bg-gradient-to-b from-fuchsia-600 to-primary text-white p-[12px]"
             : "text-primary bg-primary/[0.1] p-[11px] border border-primary"
-        } hover:bg-primary hover:text-white `}
+        } hover:bg-gradient-to-b hover:from-fuchsia-600 hover:to-primary hover:text-white `}
       >
         { icon ? icon : "" }
         <span>{text}</span>
