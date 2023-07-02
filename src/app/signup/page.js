@@ -64,7 +64,7 @@ export default function Signup() {
                     
                     <div className="mx-auto max-w-[350px]">
                         <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
-                        <h1 className="py-4 text-primary text-2xl font-bold">Create Your Account</h1>
+                        <h1 className="py-4 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary text-2xl font-bold">Create Your Account</h1>
                         <p className="pb-5">Sign up to create and manage your recommendations</p>
 
                         {/* Show success message */}

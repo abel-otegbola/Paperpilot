@@ -44,7 +44,7 @@ export default function Signup() {
                 <div className="p-[20px] md:w-[50%] w-full md:px-[12%] md:py-[7%] py-[80px] bg-slate-100 dark:bg-gray-800 rounded">
                     
                     <Image src="/logo.svg" alt="paperpilot" width={30} height={30} /> 
-                    <h1 className="py-3 text-primary text-2xl font-bold">Welcome!</h1>
+                    <h1 className="py-3 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary text-2xl font-bold">Welcome!</h1>
                     <p className="pb-2">Sign in to create and manage your recommendations</p>
 
                     
@@ -59,7 +59,7 @@ export default function Signup() {
                         }
                     </div>
 
-                    <p className="font-bold text-purple-500 text-center my-2">OR</p>
+                    <p className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary text-center my-2">OR</p>
 
                     {/* Show success message */}
                     { success !== "" ? <p className="my-2 text-green-500 p-4 text-center flex justify-between items-center rounded bg-green-400/[0.1]">{success}<FaTimesCircle onClick={() => setSuccess("")}/></p> : "" }
