@@ -7,6 +7,7 @@ import { FiLoader } from "react-icons/fi";
 import Error from "./error";
 import Paper from "@/components/paper/page";
 import Button from "@/components/button/button";
+import axios from "axios";
 
 
 
@@ -23,12 +24,13 @@ const Dashboard = () => {
 
     const urls = [
         `https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&year=${year.join("-")}&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors,publicationTypes`,
-        `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?${type === "paper" ? `q=subject:${query[0]}` : `q=name:${search}`}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`
+        `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?${type === "paper" ? `q=subject:${search}` : `q=name:${search}`}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`,
+        `https://api.core.ac.uk/v3/search/journals/?q=${search}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY}`
     ]
 
     async function getData() {
         setLoading(true)
-        const res = await fetch(urls[url])
+        const res = await axios.get(urls[url])
         // Recommendation: handle errors
         .catch(err => {
             setError('Failed to fetch data')
@@ -37,7 +39,7 @@ const Dashboard = () => {
             throw new Error("Failed to fetch data")
         })
         setLoading(false)
-        return res.json()
+        return res.data
     }
 
     useEffect(() => {

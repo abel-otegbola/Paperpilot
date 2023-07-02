@@ -53,6 +53,8 @@ const SearchBar = ({ query, actions, handleSearch }) => {
                     <select className="p-2 px-4 dark:bg-dark border border-slate-400/[0.3] rounded cursor-pointer mr-1" onChange={(e) => actions.setUrl(e.target.value)}>
                         <option value={0}>Semantic scholar</option>
                         <option value={1}>Springer</option>
+                        <option value={2}>CORE</option>
+                        <option value={3}>IEEE</option>
                     </select>
                 </div>
             </div>
