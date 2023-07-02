@@ -8,18 +8,18 @@ const Paper = ({ data }) => {
         return (
         <>
         {
-            !data[0].doi ?
-            data.map(paper => (
-                <div key={paper.paperId} className="flex gap-4 items-start p-4 border border-slate-400/[0.3] rounded my-1 w-full">
+            !data[0].creators ?
+            data.map((paper, i) => (
+                <div key={i} className="flex gap-4 items-start p-4 border border-slate-400/[0.3] rounded my-1 w-full">
                     <p className="p-2 text-xl bg-primary/[0.4] text-primary rounded border border-primary">
                         <FiFile />
                     </p>
                     <div>
                         <Link href={{
                             pathname: '/dashboard/singlePaper',
-                            query: { paper: paper.paperId, source: "semantic" }
+                            query: { paper: paper.paperId || paper.doi, source: "semantic" }
                         }} className="font-semibold mb-2" >{paper.title}</Link>
-                            <div>Authors: {paper.authors.slice(0,3).map(author => ( <span key={author.authorId}>{author.name},</span> ))}</div>
+                            <div>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</div>
                         <p className="opacity-[0.6]">Year: {paper.year}</p>
                     </div>
                 </div>

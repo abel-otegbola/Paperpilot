@@ -15,7 +15,7 @@ const Dashboard = () => {
     const {data:session} = useSession();
     const [papers, setPapers] = useState([])
     const [query, setQuery] = useState(['Physics', 'Philosophy'])
-    const [search, setSearch] = useState("Hughes")
+    const [search, setSearch] = useState("Fermentation")
     const [year, setYear] = useState(["2022", "2023"])
     const [type, setType] = useState("paper")
     const [url, setUrl] = useState(0)
@@ -25,7 +25,7 @@ const Dashboard = () => {
     const urls = [
         `https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&year=${year.join("-")}&openAccessPdf&fieldsOfStudy=${query.join()}&fields=title,year,authors,publicationTypes`,
         `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?${type === "paper" ? `q=subject:${search}` : `q=name:${search}`}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`,
-        `https://api.core.ac.uk/v3/search/journals/?q=${search}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY}`
+        `https://api.core.ac.uk/v3/search/works/?q=${search}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY}`
     ]
 
     async function getData() {
@@ -44,13 +44,33 @@ const Dashboard = () => {
 
     useEffect(() => {
         getData()
-        .then(data => {setPapers(!data.records ? data.data : data.records )})
+        .then(data => {
+            if(data.records) {
+                setPapers(data.records)
+            }
+            else if(data.results) {
+                setPapers(data.results)
+            }
+            else if(data.data) {
+                setPapers(data.data)
+            }
+        })
     }, [])
 
 
     const handleSearch = () => {
         getData()
-        .then(data => {setPapers(!data.records ? data.data : data.records )})
+        .then(data => {
+            if(data.records) {
+                setPapers(data.records)
+            }
+            else if(data.results) {
+                setPapers(data.results)
+            }
+            else {
+                setPapers(data.data)
+            }
+        })
     }
 
     return (
