@@ -3,16 +3,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaBars, FaUserCircle } from 'react-icons/fa'
 import { useSession } from "next-auth/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiBell, FiSettings } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import Button from "../button/button";
 import NavMenu from "../navMenu/navMenu";
+import { closeBlock } from "@/utils/closeBlock";
 
 const Navbar = () => {
     const {data: session} = useSession()
     const [open, setOpen] = useState(false)
     const pathname = usePathname()
+    const menuRef = useRef(null)
+
+    // Close navbar when clicked outside
+    useEffect(() => {
+        closeBlock(menuRef, open, setOpen)
+    }, [open])
 
 
     return (
@@ -43,7 +50,7 @@ const Navbar = () => {
                         </div>
                 }
 
-                <div className="flex relative md:hidden">
+                <div ref={menuRef} className="flex relative md:hidden">
                     <div className={`absolute top-[100%] right-0 transition-all duration-700 overflow-hidden z-[10] ${open ? "md:h-0 h-[500px]" : "h-0"}`}>
                         <NavMenu />
                     </div>
