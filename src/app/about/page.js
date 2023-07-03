@@ -33,7 +33,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="md:w-[40%] p-[5%] w-full m-2 rounded border border-gray-300/[0.3]">
+                <div className="md:w-[40%] p-[5%] w-full md:ml-4 rounded border border-gray-300/[0.3]">
                     <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary text-2xl font-bold my-2">Connect with us</h2>
                     <p>Reach us by sending a message or through our social media</p>
                     <form className="mt-6">

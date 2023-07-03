@@ -31,8 +31,8 @@ const Navbar = () => {
 
             <ul className="md:flex hidden md:items-center justify-center md:flex-row flex-col font-semibold">
                 <li><Link className={`px-6 py-2 ${pathname === "/" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/" >Home</Link></li>
-                <li><Link className={`px-6 py-2 ${pathname === "features" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/features" >Features</Link></li>
-                <li><Link className={`px-6 py-2 ${pathname === "about" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/about" >About us</Link></li>
+                <li><Link className={`px-6 py-2 ${pathname === "/features" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/features" >Features</Link></li>
+                <li><Link className={`px-6 py-2 ${pathname === "/about" ? "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-primary" : "dark:text-white/[0.7]"}`} href="/about" >About us</Link></li>
             </ul>
 
             <div className="flex items-center gap-2">
