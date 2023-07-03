@@ -6,17 +6,16 @@ import { FiBell, FiBook, FiHome, FiLogOut, FiSettings } from "react-icons/fi";
 const DashboardSidebar = ({ session }) => {
     const links = [
         { id: 0, title: 'Dashboard', to: "/dashboard", icon: <FiHome className="text-xl opacity-[0.7]" /> },
-        { id: 1, title: 'Recommendations', to: "/dashboard/recommendations", icon: <FiBook className="text-xl opacity-[0.7]" /> },
-        { id: 2, title: 'Notifications', to: "/dashboard/notifications", icon: <FiBell className="text-xl opacity-[0.7]" /> },
+        { id: 1, title: 'Recommendations', to: "/dashboard/recommendations", icon: <FiBook className="text-xl opacity-[0.7]" /> }
     ]
     const links2 = [
-        { id: 0, title: 'Settings', to: "/dashboard/settings", icon: <FiSettings className="text-xl opacity-[0.7]" /> },
+        { id: 0, title: 'Settings', to: "/settings", icon: <FiSettings className="text-xl opacity-[0.7]" /> },
         { id: 1, title: 'Logout', to: "#", icon: <FiLogOut className="text-xl opacity-[0.7]" /> },
     ]
     const pathname = usePathname()
 
     return (
-        <div className="md:flex top-2 h-screen flex-col justify-between hidden w-[300px] bg-white dark:bg-dark">
+        <div className="md:flex sticky top-12 left-0 flex-col h-[90vh] justify-between hidden w-[300px] bg-white dark:bg-dark">
             <div>
                 <ul className="md:px-[8%] p-4 border border-transparent border-b-slate-500/[0.3]">
                     {

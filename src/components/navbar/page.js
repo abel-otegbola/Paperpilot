@@ -36,13 +36,10 @@ const Navbar = () => {
             </ul>
 
             <div className="flex items-center gap-2">
+                        <Link href="/settings"><FiSettings className="text-xl mr-4 text-slate-500 dark:text-white/[0.8] hover:text-primary/[0.6]"/></Link>
                 {
                     session ?
-                        <div className="flex items-center gap-6 rounded-[40px] text-slate-500 dark:text-white/[0.8]">
-                            <Link href="/dashboard/notifications"><FiBell className="text-xl hover:text-primary/[0.6]" /></Link>
-                            <Link href="/dashboard/settings"><FiSettings className="text-xl hover:text-primary/[0.6]"/></Link>
-                            <Link href="/dashboard"><FaUserCircle className="text-2xl hover:text-primary/[0.6] md:mr-0"/></Link>
-                        </div>
+                        <Link href="/dashboard"><FaUserCircle className="text-2xl text-slate-500 dark:text-white/[0.8] hover:text-primary/[0.6] md:mr-0"/></Link>
                     :        
                         <div className="md:flex hidden items-center gap-2">
                             <Button link={"/login"} text={"Sign in"} type={"secondary"} />
