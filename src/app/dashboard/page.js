@@ -15,11 +15,6 @@ import { UserContext } from "./layout";
 const Dashboard = () => {
     const {data:session} = useSession();
     const [papers, setPapers] = useState([])
-    const [query, setQuery] = useState(['Physics', 'Philosophy'])
-    const [search, setSearch] = useState("Fermentation")
-    const [year, setYear] = useState(["2022", "2023"])
-    const [type, setType] = useState("paper")
-    const [url, setUrl] = useState(0)
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const { userData, loading: userLoading, error: recommendationsError } = useContext(UserContext)
