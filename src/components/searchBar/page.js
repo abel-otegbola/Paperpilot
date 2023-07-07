@@ -29,13 +29,13 @@ const SearchBar = () => {
 
     return (
         <div className="border border-slate-400/[0.2] px-2 backdrop-blur-sm bg-white/[0.6] dark:bg-dark/[0.6]">
-            <form className="flex items-center p-2" action={`/search?query=${search, year, type, url} `}>
+            <form className="flex items-center p-2" action={`/search?query=${search}&year=${year}&url=${url} `}>
                 <FiSearch className="text-lg opacity-[0.5] mr-2" />
                 <input type="search" name="search" placeholder="Search papers..." onFocus={() => setOpenSearch(true)} onBlur={() => setOpenSearch(false)} onChange={(e) => setSearch(e.target.value)} className="flex-1 bg-transparent border-transparent p-3 rounded flex-1 focus:outline-2 focus:outline-primary hover:border-primary" />
                 <button className="p-[10px] px-6 rounded border border-slate-400/[0.3] bg-gradient-to-b from-fuchsia-600 to-primary text-white rounded cursor-pointer" >Search</button>
             </form>
 
-            <div className={`overflow-hidden transition-all duration-700 ${openSearch ? "h-[120px]" : "h-0"}`}>
+            <div className={`overflow-hidden transition-all duration-700 ${openSearch ? "md:h-[120px] h-[190px]" : "h-[0px]"}`}>
                 <h4 className="opacity-[0.6] text-[11px] mt-2 mb-1 text-primary">Filter Search results:</h4>
                 <div className="flex flex-wrap items-center w-full mb-2 p-2 gap-2 bg-gray-400/[0.1]">
                     <div ref={menuRef} className="relative border border-transparent border-l-gray-500/[0.1] px-2">
