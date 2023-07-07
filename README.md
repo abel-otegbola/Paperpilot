@@ -16,10 +16,11 @@ A next-js research website for timely and efficient delivery of research resourc
 
 visit live site [here](https://paperpilothub.vercel.app)
 
-## Snapshots
-![Screenshot_20230627-210939](https://github.com/abel-otegbola/Paperpilot/assets/59369762/de8ad999-8a54-42f7-8307-703c3acb2f94)
-![Screenshot_20230627-210903](https://github.com/abel-otegbola/Paperpilot/assets/59369762/23a699d7-a8bb-4562-baf9-f9286481b990)
-![Screenshot_20230627-210834](https://github.com/abel-otegbola/Paperpilot/assets/59369762/87a396eb-9b59-4ca5-a124-0f87103f321d)
+## Figma design
+[Design](https://www.figma.com/proto/uQEajfMBYBAKeughCEtuTP/Paperpilot?type=design&node-id=1-3&t=uTpNxdWU6QhFg90o-0&scaling=scale-down-width&page-id=0%3A1)
+
+## Screenshots
+![paperpilot](https://github.com/abel-otegbola/Paperpilot/assets/59369762/401e1fcc-4455-45ec-a222-44f9bb40157d)
 
 
 
