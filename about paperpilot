@@ -1,0 +1,23 @@
+## Inspiration
+The inspiration behind paperpilot stems from personal and observed experiences. We have witnessed the challenges researchers face in finding relevant papers and the time-consuming process of manual searching. This motivated us to leverage the power of Google NLP to streamline research, provide personalized recommendations, and empower users in their quest for knowledge. We believe that by harnessing advanced AI technology, we can revolutionize the research experience, foster collaboration, and unlock new possibilities for discovery and innovation.
+
+## What it does
+The website utilizes Google Natural Language Processing (NLP) to provide personalized research paper recommendations. By analyzing user preferences and research interests, the platform delivers highly relevant and accurate suggestions, streamlining the process of finding scholarly papers. It empowers users to discover new knowledge, enhance their research efficiency, and foster collaboration within the academic community.
+
+## How we built it
+The website was built starting with user interface (UI) design iterations. The development phase involved implementing cutting-edge technologies, integrating Google Natural Language Processing (NLP), and ensuring seamless functionality. Rigorous testing and quality assurance procedures were conducted to ensure a smooth user experience and the highest standards of performance, security, and reliability.
+
+## Challenges we ran into
+One challenge we encountered was ensuring the quality and coverage of the research paper database. Curating and maintaining a comprehensive collection of scholarly resources required overcoming obstacles such as data inconsistencies, incomplete metadata, and varying publication formats. Addressing these challenges involved implementing rigorous data validation processes and using of diverse research paper APIs.
+
+## Accomplishments that we're proud of
+integration of Google Natural Language Processing (NLP) into our platform, harnessing its advanced capabilities to deliver highly accurate and personalized research paper recommendations.
+Also, designing and developing an intuitive and user-friendly interface that enhances the research journey, allowing users to effortlessly navigate, request papers
+
+## What we learned
+The development process presented us with various technical challenges that required creative problem-solving skills. We developed the ability to analyze issues, conduct thorough research, and apply innovative solutions to overcome obstacles and ensure smooth progress.
+We recognized the significance of thorough quality assurance and testing. We implemented robust testing methodologies to identify and rectify any issues or bugs, ensuring a stable and reliable platform for our users.
+The development journey also taught us the importance of resilience and perseverance. We encountered setbacks and faced demanding deadlines, but we remained determined, supporting and motivating each other to overcome challenges and achieve our goals.
+
+## What's next for Paperpilot
+The future of the project holds exciting possibilities and ongoing development to further enhance the user experience and expand the platform's capabilities. some of these are expansion of research database and advanced search capabilities.

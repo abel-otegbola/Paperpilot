@@ -16,10 +16,11 @@ A next-js research website for timely and efficient delivery of research resourc
 
 visit live site [here](https://paperpilothub.vercel.app)
 
-## Snapshots
-![Screenshot_20230627-210939](https://github.com/abel-otegbola/Paperpilot/assets/59369762/de8ad999-8a54-42f7-8307-703c3acb2f94)
-![Screenshot_20230627-210903](https://github.com/abel-otegbola/Paperpilot/assets/59369762/23a699d7-a8bb-4562-baf9-f9286481b990)
-![Screenshot_20230627-210834](https://github.com/abel-otegbola/Paperpilot/assets/59369762/87a396eb-9b59-4ca5-a124-0f87103f321d)
+## Figma design
+[Design](https://www.figma.com/proto/uQEajfMBYBAKeughCEtuTP/Paperpilot?type=design&node-id=1-3&t=uTpNxdWU6QhFg90o-0&scaling=scale-down-width&page-id=0%3A1)
+
+## Screenshots
+![paperpilot](https://github.com/abel-otegbola/Paperpilot/assets/59369762/401e1fcc-4455-45ec-a222-44f9bb40157d)
 
 
 
@@ -61,6 +62,55 @@ Once installed, run
 npm start
 ```
 
+## Project Structure
+
+Here is a breakdown of the project structure:
+
+```
+├── node_modules/
+├── public/
+│   ├── pictures go here
+├── src/
+│   ├── App.jsx
+│   ├── index.jsx
+│   ├── styles/
+|   |   ├── //styles go here
+|   |   ├── App.css
+│   |   ├── index.css
+|   ├── pages/
+|   |   ├── api/
+|   |   |   ├── auth/
+|   |   |   |   ├── next-auth configs go here
+|   |   |   ├── apis go here
+|   ├── components/
+│   |   ├── //components go here
+|   ├── database/
+│   |   ├── connection.js // mongodb connection
+|   ├── models/
+│   |   ├── Schema // mongodb schemas
+|   ├── utils/
+│   |   ├── //utils go here
+│   └── 
+├── .gitignore
+|── .eslintrc.json
+|── tailwind.config.js
+|── postcss.config.js
+|── jsconfig.json
+├── package.json
+|── package-lock.json
+├── README.md
+├── next.config.js
+```
+
+- `node_modules`: contains all the project dependencies.
+- `public`: contains any other static assets that will be served by the development server or included in the production build.
+- `src`: contains the application code, including the entry point (`main.jsx`), the root component (`App.jsx`), and any other components or styles.
+- `.eslintrc.json`: contains configuration options for ESLint.
+- `.gitignore`: specifies files and directories that should be ignored by Git.
+- `package.json`: contains project metadata and specifies dependencies and scripts.
+- `README.md`: contains project documentation.
+- `next.config.js`: contains configuration options for Nextjs.
+- `tailwind.config.js`: contains configuration options for Tailwind-css.
 
 ### credits
 - [Tailwind-css](https://tailwindcss.com/docs/guides/nextjs)
