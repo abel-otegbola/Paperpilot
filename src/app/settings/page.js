@@ -30,7 +30,7 @@ export default function Settings() {
     }, [])
 
     return (
-        <div className="p-4 ">
+        <div className="md: px-[5%] p-4 ">
 
             <h2 className="opacity-[0.3] font-semibold text-lg my-3">DASHBOARD/SETTINGS</h2>
             <p>Customize your application to your preferences.</p>

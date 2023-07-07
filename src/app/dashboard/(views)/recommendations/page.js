@@ -12,8 +12,9 @@ const Recommendations = () => {
     const [platforms, setPlatforms] = useState([])
     const [time, setTime] = useState([])
     const {data:session} = useSession()
-    const { userData, loading: userLoading, error } = useContext(UserContext)
+    const { userData, loading: userLoading, error: dataError } = useContext(UserContext)
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
 
     useEffect(() => {
         if(userData[0]) {
@@ -53,6 +54,7 @@ const Recommendations = () => {
             setError("")
             throw new Error("Failed to fetch data")
         })
+        await axios.get(`/api/startRecommendations/${session?.user.email}`)
         setLoading(false)
         return console.log(res)
     }

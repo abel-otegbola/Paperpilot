@@ -1,0 +1,29 @@
+import { automation } from '../candymail.automation'
+const candymail = require('candymail');
+
+candymail.init(automation.workflows, {
+    mail: {
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: process.env.MAIL_USER,
+            pass: process.env.MAIL_PASSWORD,
+        },
+        tls: {
+            rejectUnauthorized: true,
+        },
+    },
+    hosting: {
+        url: process.env.HOSTING_URL
+    },
+    db: {
+        reset: true
+    },
+    debug: {
+        trace: true
+    },
+})
+.then((e) => {
+    candymail.start()
+})

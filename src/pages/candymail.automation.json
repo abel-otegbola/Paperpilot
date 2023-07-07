@@ -1,0 +1,32 @@
+{
+    "workflows" :[
+       {
+          "name":"Recommendations",
+          "description":"Send recommendations to users",
+          "trigger_name":"recommend",
+          "emails":[
+             {
+                "trigger":"time",
+                "sendDelay":1,
+                "subject":"Welcome to VideoMaker+",
+                "body":"<div style='text-align:left'><p>Thanks for joining!<br/><br/>You're officially a part of the VideoMaker+ family! Join 100's of passionate film makers like you making a difference in everyday life by making the most wonderful content.</p></div>",
+                "from":"sender@gmail.com"
+             },
+             {
+                "trigger":"time",
+                "sendDelay":24,
+                "subject":"How to edit your first video?",
+                "body":"<div style='text-align:left'><p>Ready to get started? Here's how you can add subtitles to your first video and add some flair:</p><br/><p>1. Record 1-min video of you talking into the camera<br/> 2. Import the footage into VideoMaker+ app<br/> 3. Click on Effects &gt; Retro<br/> 4. Turn on: Automatic Subtitles<br/> 5. Export!</p><br/><p>And that's it. You now have a retro looking video with auto-generated subtitles ready to be shared with the world!</p></div>",
+                "from":"sender@gmail.com"
+             },
+             {
+                "trigger":"time",
+                "sendDelay":72,
+                "subject":"A friendly check-in from VideoMaker+",
+                "body":"<div style='text-align:left'><p>Looks like you've been using VideoMaker+ in the last few days - and we love that! I just wanted to quickly check-in and how your experience has been with the app.</p><br/><p>1. How did you hear about VideoMaker+?<br/>2. What do you like/dislike about VideoMaker+?<br/>3. What can we do to improve your experience?</p></div>",
+                "from":"sender@gmail.com"
+             }
+          ]
+       }
+    ]
+}
