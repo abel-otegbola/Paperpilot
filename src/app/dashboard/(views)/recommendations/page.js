@@ -3,14 +3,16 @@ import SettingBox from "@/components/settingsBox/page";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useContext, useEffect, useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import { FiLoader, FiSave } from "react-icons/fi";
 import { UserContext } from "../../layout";
+import Button from "@/components/button/button";
 
 const Recommendations = () => {
     const [recommendations, setRecommendations] = useState([])
     const [platforms, setPlatforms] = useState([])
     const [time, setTime] = useState([])
+    const [value, setValue] = useState("")
     const {data:session} = useSession()
     const { userData, loading: userLoading, error: dataError } = useContext(UserContext)
     const [loading, setLoading] = useState(false)
@@ -24,12 +26,18 @@ const Recommendations = () => {
         }
     }, [userData])
 
+    const addRecommendations = () => {
+        if(recommendations.indexOf(value) === -1 && value !== "") {
+            setRecommendations([...recommendations, value])
+        }
+    }
+
+    const removeRecommendations = (index) => {
+        setRecommendations(recommendations.filter(item => item !== index))
+    }
+
     const handleOptions = (option, value) => {
         if(option === 0) {
-            recommendations.indexOf(value) === -1 ?
-            setRecommendations([...recommendations, value])
-            :
-            setRecommendations(recommendations.filter(item => item !== value))
         }
         else if(option === 1) {
             platforms.indexOf(value) === -1 ?
@@ -70,10 +78,14 @@ const Recommendations = () => {
             }
             <SettingBox text={"Recommendations"} subtext={"Set-up your research recommendations. Please select the categories that suite you."}>
                 <div className="flex flex-wrap gap-2 pt-4 overflow-auto">
-                    { ["Physics", "Mathematics", "Medicine", "Nanotechnology", "BioChemistry", "History", "Chemistry"].map((item, i) => (
-                        <button key={i} onClick={() => handleOptions(0, item)} className={`flex items-center text-center rounded border p-[10px] ${recommendations.indexOf(item) !== -1 ? "border-green-500 bg-green-600 text-white": "border-gray-500/[0.3]"}`}><FaCheckCircle className="opacity-[0.5] mr-2"/> {item}</button>
-                    ))}
+                    <input type="text" className="flex-1 bg-transparent border-slate-200/[0.1] border px-4 rounded-sm" placeholder="Type keywords, categories, tags and/or fields of study you will like to receive papers from" onChange={(e) => setValue(e.target.value)} />
+                    <button className="bg-gradient-to-b from-fuchsia-600 to-primary text-white p-[12px] rounded px-6" onClick={() => addRecommendations()}>Add to recommendations</button>
                 </div>
+                {
+                    recommendations.map((item, i) => (
+                        <p key={i} className="md:w-[50%] my-1 flex p-2 px-4 rounded-sm bg-slate-200/[0.08] justify-between items-center"><span>{item}</span> <FaTimes onClick={() => removeRecommendations(item)} className="text-red-500 text-3xl p-2" /></p>
+                    ))
+                }
             </SettingBox>
 
             <SettingBox text={"Platforms"} subtext={"Select platforms to get papers from"}>
