@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { FiFile, FiPaperclip } from "react-icons/fi";
 
-const Paper = ({ data }) => {
+const Paper = ({ data, url }) => {
 
     if (data !== [] && data[0]) {
         return (
@@ -17,10 +17,10 @@ const Paper = ({ data }) => {
                     <div>
                         <Link href={{
                             pathname: '/dashboard/singlePaper',
-                            query: { paper: paper.paperId || paper.doi, source: "semantic" }
+                            query: { paper: paper.paperId || paper.doi || paper.title, source: url === 0 ? "semantic" : url === 1 ? "springer" : url === 2 ? "CORE" : "IEEE"}
                         }} className="font-semibold mb-2" >{paper.title}</Link>
                             <div>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</div>
-                        <p className="opacity-[0.6]">Year: {paper.year}</p>
+                        <p className="opacity-[0.6]">Year: {paper.year || paper.yearPublished}</p>
                     </div>
                 </div>
             ))

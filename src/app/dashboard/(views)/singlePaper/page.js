@@ -19,7 +19,11 @@ const SinglePaper = () => {
 
     async function getData() {
         setLoading(true)
-        const res = await fetch(source === "semantic" ? `https://api.semanticscholar.org/graph/v1/paper/${id}?fields=title,url,year,authors,abstract,openAccessPdf,fieldsOfStudy,publicationTypes,publicationDate` : `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?q=doi:${id}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`)
+        const res = await fetch(source === "semantic" ? 
+            `https://api.semanticscholar.org/graph/v1/paper/${id}?fields=title,url,year,authors,abstract,openAccessPdf,fieldsOfStudy,publicationTypes,publicationDate` 
+            : source === "springer" ?
+            `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?q=doi:${id}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`
+            : `https://api.core.ac.uk/v3/search/works/?q=${id}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY}`)
         // Recommendation: handle errors
         .catch(err => {
             setError('Failed to fetch data')
@@ -34,11 +38,17 @@ const SinglePaper = () => {
     useEffect(() => {
         getData()
         .then(data => {
-            if(!data.records) {setPaper(data)}
-            else {
+            if(source === "semantic") {
+                setPaper(data)
+            }
+            else if(source === "springer") {
                 const {publicationName: title, creators, subjects: fieldsOfStudy, abstract, publicationDate: year, contentType, url, publicationType, publicationDate} = data.records[0];
                 setPaper({title, authors: creators.map((item, i) => ({ authorId: i, name: item.creator }) ), fieldsOfStudy, abstract, year, publicationDate, openAccessPdf:{url: url[0].value}, publicationTypes: [contentType, publicationType], })
             } 
+            else if(source === "CORE") {
+                const {title, authors, subjects: fieldsOfStudy, abstract, year_published: year, contentType, download_url: openAccessPdf} = data.results[0];
+                setPaper({title, authors: authors.map((item, i) => ({ authorId: i, name: item.name }) ), fieldsOfStudy, abstract, year, publicationDate: year, openAccessPdf, publicationTypes: ["Journal"], })
+            }
             console.log(data)
         })
     }, [])
@@ -62,7 +72,6 @@ const SinglePaper = () => {
                         {
                             paper.authors?.slice(0,3).map(author => (
                                 <div key={author.authorId} className="flex items-center gap-1">
-                                    <p className="p-2 py-1 rounded-full font-bold bg-green-300">{author.name.slice(0,1)}</p>
                                     <p className="font-semibold">{author.name}</p>
                                 </div>
                             ))
