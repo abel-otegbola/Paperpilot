@@ -21,9 +21,9 @@ const Paper = ({ data, url }) => {
                         }} className="font-semibold mb-2" >{paper.title}</Link>
                             {
                                 paper.authors.authors ?
-                                <div>Authors: {paper.authors.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.full_name},</span> ))}</div>
+                                <div className="py-1">Authors: {paper.authors.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.full_name},</span> ))}</div>
                                 :
-                                <div>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</div>
+                                <div className="py-1">Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</div>
                             }
                         <p className="opacity-[0.6]">Year: {paper.year || paper.yearPublished || paper.publication_year}</p>
                     </div>
@@ -38,7 +38,7 @@ const Paper = ({ data, url }) => {
                             pathname: '/dashboard/singlePaper',
                             query: { paper: paper.doi, source: "springer" }
                         }} className="font-semibold mb-2" >{paper.publicationName}</Link>
-                        <div>Authors: {paper.creators.slice(0,3).map((author,i) => ( <span key={i}>{author.creator},</span> ))}</div>
+                        <div className="py-1">Authors: {paper.creators.slice(0,3).map((author,i) => ( <span key={i}>{author.creator},</span> ))}</div>
                         <p className="opacity-[0.6]">Year: {paper.publicationDate}</p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ const Paper = ({ data, url }) => {
     }
     else {
         return (
-            <div>Welcome</div>
+            <div className="min-h-[150px] flex justify-center items-center">Could not fetch data. Please try again</div>
         )
     }
 }

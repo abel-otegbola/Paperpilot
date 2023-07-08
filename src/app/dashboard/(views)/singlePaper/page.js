@@ -24,7 +24,7 @@ const SinglePaper = () => {
             : source === "springer" ?
             `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?q=doi:${id}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`
             : source === "CORE" ?
-            `https://api.core.ac.uk/v3/search/works/?q=${id}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY} `
+            `https://api.core.ac.uk/v3/search/works/?id=${id}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY} `
             : `https://ieeexploreapi.ieee.org/api/v1/search/articles?doi=${id}&apikey=${process.env.NEXT_PUBLIC_IEEE_API_KEY}`)
         // Recommendation: handle errors
         .catch(err => {
@@ -48,8 +48,8 @@ const SinglePaper = () => {
                 setPaper({title, authors: creators.map((item, i) => ({ authorId: i, name: item.creator }) ), fieldsOfStudy, abstract, year, publicationDate, openAccessPdf:{url: url[0].value}, publicationTypes: [contentType, publicationType], })
             } 
             else if(source === "CORE") {
-                const {title, authors, subjects: fieldsOfStudy, abstract, year_published: year, download_url} = data.results[0];
-                setPaper({title, authors: authors.map((item, i) => ({ authorId: i, name: item.name }) ), fieldsOfStudy, abstract, year, publicationDate: year, openAccessPdf: {url: download_url}, publicationTypes: ["Journal"], })
+                const {title, authors, subjects: fieldsOfStudy, abstract, yearPublished: year, downloadUrl} = data.results[0];
+                setPaper({title, authors: authors.map((item, i) => ({ authorId: i, name: item.name }) ), fieldsOfStudy, abstract, year, publicationDate: year, openAccessPdf: {url: downloadUrl}, publicationTypes: ["Journal"], })
             }
             else if(source === "IEEE") {
                 const {title, authors, index_terms, abstract, publication_year: year, content_type, pdf_url} = data.articles[0];
