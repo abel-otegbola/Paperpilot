@@ -53,7 +53,7 @@ const SinglePaper = () => {
             }
             else if(source === "IEEE") {
                 const {title, authors, index_terms, abstract, publication_year: year, content_type, pdf_url} = data.articles[0];
-                setPaper({title, authors: authors.authors.map((item, i) => ({ authorId: i, name: item.full_name }) ), fieldsOfStudy: [], abstract, year, publicationDate: year, openAccessPdf: {url: pdf_url}, publicationTypes: [content_type], })
+                setPaper({title, authors: authors.authors.map((item, i) => ({ authorId: i, name: item.full_name }) ), fieldsOfStudy: index_terms.ieee_terms.terms, abstract, year, publicationDate: year, openAccessPdf: {url: pdf_url}, publicationTypes: [content_type], })
             }
         })
     }, [])
