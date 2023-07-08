@@ -19,8 +19,13 @@ const Paper = ({ data, url }) => {
                             pathname: '/dashboard/singlePaper',
                             query: { paper: paper.paperId || paper.doi || paper.title, source: url === 0 ? "semantic" : url === 1 ? "springer" : url === 2 ? "CORE" : "IEEE"}
                         }} className="font-semibold mb-2" >{paper.title}</Link>
-                            <div>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</div>
-                        <p className="opacity-[0.6]">Year: {paper.year || paper.yearPublished}</p>
+                            {
+                                paper.authors.authors ?
+                                <div>Authors: {paper.authors.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.full_name},</span> ))}</div>
+                                :
+                                <div>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</div>
+                            }
+                        <p className="opacity-[0.6]">Year: {paper.year || paper.yearPublished || paper.publication_year}</p>
                     </div>
                 </div>
             ))

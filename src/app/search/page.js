@@ -20,7 +20,8 @@ const Search = () => {
     const urls = [
         `https://api.semanticscholar.org/graph/v1/paper/search?query=${search}&openAccessPdf&fields=title,year,authors,publicationTypes`,
         `${process.env.NEXT_PUBLIC_SPRINGER_URL}/metadata/json?${type === "paper" ? `q=keyword:${search}` : `q=name:${search}`}&api_key=${process.env.NEXT_PUBLIC_SPRINGER_API_KEY}`,
-        `https://api.core.ac.uk/v3/search/works/?q=${search}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY}`
+        `https://api.core.ac.uk/v3/search/works/?q=${search}&api_key=${process.env.NEXT_PUBLIC_CORE_API_KEY}`,
+        `https://ieeexploreapi.ieee.org/api/v1/search/articles?querytext=${search}&apikey=${process.env.NEXT_PUBLIC_IEEE_API_KEY}`
     ]
 
     async function getData() {
@@ -47,6 +48,9 @@ const Search = () => {
             }
             else if(data.data) {
                 setPapers(data.data)
+            }
+            else if(data.articles) {
+                setPapers(data.articles)
             }
         })
     }, [searchparams])
