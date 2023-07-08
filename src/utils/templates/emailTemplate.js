@@ -8,24 +8,22 @@ export function EmailTemplate({ data }) {
           <h1 style={{ padding: 5, fontWeight: "700", fontSize: "25px"  }}>Research Papers Digest</h1>
           <p style={{ padding: 5, fontWeight: "700"  }}>Recent research papers you might find valuable based on your interest</p>
 
-          <div style={{ marginBlock: 40, paddingBlock: 20, borderBlock: "1px solid #9999" }}>
+          <div style={{ marginBlock: 40, paddingBlock: 20 }}>
           {
             data.map((paper, i) => (
                 <div key={i} >
-                    <div style={{ padding: 5, borderBlock: "1px solid #999",  }}>
+                    <div style={{ padding: 7 }}>
                         <Link href={{
                             pathname: 'https://paperpilothub.vercel.app/dashboard/singlePaper',
                             query: { paper: paper.paperId, source: "semantic" }
                         }} style={{ fontSize: "20px" }}>{paper.title}</Link>
-                        <p style={{ paddingBlock: 2 }}>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</p>
+                        <p style={{ paddingBlock: 1 }}>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</p>
                         <p className="opacity-[0.6]">Year: {paper.year}</p>
                     </div>
                 </div>
             ))
           }
           </div>
-          
-          <button style={{ padding: 10, borderRadius: 5, margin: 5, marginTop: 10, backgroundColor: "#6252f2", color: "#fff" }}>Check it out here</button>
 
           <div style={{ display: "flex", justifyContent: "center", marginBlock: 20 }}>Not getting the best research recommendations? <a href="https://paperpilothub.vercel.app/dashboard/recommendations" style={{ color: "#6252f2" }}>Edit your Recommendations here</a></div>
           

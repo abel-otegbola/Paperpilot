@@ -17,6 +17,7 @@ const Recommendations = () => {
     const { userData, loading: userLoading, error: dataError } = useContext(UserContext)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
+    const [checkbox, setCheckbox] = useState()
 
     useEffect(() => {
         if(userData[0]) {
@@ -25,6 +26,24 @@ const Recommendations = () => {
             setTime(userData[0].time)
         }
     }, [userData])
+
+    const startDelivery = async () => {
+        const res = await axios.get(`/api/startRecommendations/${session?.user.email}`)
+            .catch(err => {
+                setError('Failed to fetch data')
+                setLoading(false)
+                setError("")
+                throw new Error("Failed to fetch data")
+            })
+            setLoading(false)
+            return console.log(res)
+    }
+
+    useEffect(() => {
+        if(checkbox) {
+            startDelivery()
+        }
+    }, [checkbox])
 
     const addRecommendations = () => {
         if(recommendations.indexOf(value) === -1 && value !== "") {
@@ -62,7 +81,6 @@ const Recommendations = () => {
             setError("")
             throw new Error("Failed to fetch data")
         })
-        await axios.get(`/api/startRecommendations/${session?.user.email}`)
         setLoading(false)
         return console.log(res)
     }
@@ -77,8 +95,8 @@ const Recommendations = () => {
                 ""
             }
             <SettingBox text={"Recommendations"} subtext={"Set-up your research recommendations. Please select the categories that suite you."}>
-                <div className="flex flex-wrap gap-2 pt-4 overflow-auto">
-                    <input type="text" className="flex-1 bg-transparent border-slate-200/[0.1] border px-4 rounded-sm" placeholder="Type keywords, categories, tags and/or fields of study you will like to receive papers from" onChange={(e) => setValue(e.target.value)} />
+                <div className="flex flex-wrap gap-2 pt-4 overflow-auto mb-2">
+                    <input type="text" className="flex-1 bg-transparent border-gray-200/[0.1] border p-4 rounded-sm" placeholder="Type keywords, categories, tags and/or fields of study you will like to receive papers from" onChange={(e) => setValue(e.target.value)} />
                     <button className="bg-gradient-to-b from-fuchsia-600 to-primary text-white p-[12px] rounded px-6" onClick={() => addRecommendations()}>Add to recommendations</button>
                 </div>
                 {
@@ -105,6 +123,14 @@ const Recommendations = () => {
             </SettingBox>
 
             <button className="flex gap-2 items-center w-fit p-[10px] px-6 rounded bg-gradient-to-b from-fuchsia-600 to-primary text-white" onClick={() => handleSave()}>{ !loading? <span className="flex items-center gap-2"><FiSave /> Save</span> : <span className="flex items-center gap-2"><FiLoader className="animate-spin" /> Loading</span>}</button>
+            <div>
+                <p className="mt-6 mb-1">Toggle delivery of research papers</p>
+                <div className="flex gap-2 p-2 rounded bg-gray-300/[0.1]">
+                    <input type="checkbox" onChange={(e) => setCheckbox(e.target.value)} />
+                    <p>{checkbox ?  'Disable' : 'Enable'}</p>
+                </div>
+                
+            </div>
         </div>
     )
 }

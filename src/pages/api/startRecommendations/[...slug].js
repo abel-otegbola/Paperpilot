@@ -28,15 +28,15 @@ function sendEmail(user, data) {
     const transporter = nodemailer.createTransport({
       service: "hotmail",
       auth: {
-        user: NEXT_PUBLIC_MAIL_USER,
-        pass: NEXT_PUBLIC_MAIL_PASSWORD,
+        user: process.env.NEXT_PUBLIC_MAIL_USER,
+        pass: process.env.NEXT_PUBLIC_MAIL_PASSWORD,
       },
     });
 
     const emailHtml = render(EmailTemplate({ data })); //Change the template to html to send
 
     const options = {
-      from: NEXT_PUBLIC_MAIL_USER,
+      from: process.env.NEXT_PUBLIC_MAIL_USER,
       to: user,
       subject: 'New Research recommendations',
       html: emailHtml,
