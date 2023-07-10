@@ -1,6 +1,6 @@
 import connectMongo from "@/database/connection";
 import { Recommendations } from "@/model/Schema";
-const cron = require('cron')
+const cron = require('cron').CronJob;
 const natural = require('natural');
 const { EmailTemplate } = require("@/utils/templates/emailTemplate");
 import { render } from '@react-email/render';
@@ -23,28 +23,28 @@ export default async function handler(req, res) {
 
     // Schedule paper delivery based on user time preference
     if(data.time === "Daily") {
-      cron.schedule('00 00 * * *', () => {
+      const job = new cron('00 00 00 * * *', () => {
         console.log('Running at ', new Date())
         getData(slug[0], nlpResult, data.platforms)
-      })
+      }, null, true)
     }
     else if(data.time === "Every three days") {
-      cron.schedule('00 00 * * 1,4', () => {
+      const job = new cron('00 00 00 * * 1,4', () => {
         console.log('Running at ', new Date())
         getData(slug[0], nlpResult, data.platforms)
-      })
+      }, null, true)
     }
     else if(data.time === "Weekly") {
-      cron.schedule('00 00 * * 1', () => {
+      const job = new cron('00 00 00 * * 1', () => {
         console.log('Running at ', new Date())
         getData(slug[0], nlpResult, data.platforms)
-      })
+      }, null, true)
     }
     else {
-      cron.schedule('00 00 7 * *', () => {
+      const job = new cron('00 00 00 7 * *', () => {
         console.log('Running at ', new Date())
         getData(slug[0], nlpResult, data.platforms)
-      })
+      }, null, true)
     }
 
     // 
