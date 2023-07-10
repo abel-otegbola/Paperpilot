@@ -116,7 +116,7 @@ const Recommendations = () => {
 
             <SettingBox text={"Time"} subtext={"How often do you want to receive the research papers"}>
                 <div className="flex flex-wrap gap-2 pt-4 overflow-auto">
-                    { ["Everday", "Every two days", "Every three days", "Weekly", "Every two weeks", "Monthly"].map((item, i) => (
+                    { ["Daily", "Every three days", "Weekly", "Monthly"].map((item, i) => (
                         <button key={i} onClick={() => handleOptions(2, item)} className={`flex items-center text-center rounded border p-[10px] ${time.indexOf(item) !== -1 ? "border-green-500 bg-green-600 text-white": "border-gray-500/[0.3]"}`}><FaCheckCircle className="opacity-[0.5] mr-2"/> {item}</button>
                     ))}
                 </div>
