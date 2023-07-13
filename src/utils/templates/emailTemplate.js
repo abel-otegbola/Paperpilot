@@ -16,9 +16,16 @@ export function EmailTemplate({ data }) {
                         <Link href={{
                             pathname: 'https://paperpilothub.vercel.app/dashboard/singlePaper',
                             query: { paper: paper.paperId, source: "semantic" }
-                        }} style={{ fontSize: "20px" }}>{paper.title}</Link>
-                        <p style={{ paddingBlock: 1 }}>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</p>
-                        <p className="opacity-[0.6]">Year: {paper.year}</p>
+                        }} style={{ fontSize: "20px" }}>{paper.title || paper.publicationName }</Link>
+                        {
+                          paper.creators ?
+                            <p style={{ paddingBlock: 1 }}>Authors: {paper.creators.slice(0,3).map((author,i) => ( <span key={i}>{author.creator},</span> ))}</p>
+                            : paper.authors.authors ? 
+                            <p style={{ paddingBlock: 1 }}>Authors: {paper.authors.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.full_name},</span> ))}</p>                            
+                            :
+                            <p style={{ paddingBlock: 1 }}>Authors: {paper.authors.slice(0,3).map((author, i) => ( <span key={i}>{author.name},</span> ))}</p>
+                        }
+                        <p className="opacity-[0.6]">Year: {paper.year || paper.publicationDate || paper.yearPublished || paper.publication_year}</p>
                     </div>
                 </div>
             ))

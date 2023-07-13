@@ -6,7 +6,6 @@ import { useContext, useEffect, useState } from "react";
 import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import { FiLoader, FiSave } from "react-icons/fi";
 import { UserContext } from "../../layout";
-import Button from "@/components/button/button";
 
 const Recommendations = () => {
     const [recommendations, setRecommendations] = useState([])
@@ -86,11 +85,11 @@ const Recommendations = () => {
     }
 
     return (
-        <div className="p-4">
+        <div className="relative p-4">
             <h2 className="opacity-[0.3] font-semibold text-lg my-3">RECOMMENDATIONS</h2>
             {
                 userLoading ? 
-                <div className="flex justify-center items-center min-h-[100px] text-primary text-2xl"><FiLoader /></div>
+                <div className="absolute flex justify-center items-center h-[80vh] w-full top-0 left-0 text-primary text-2xl"><FiLoader className="animate-spin"/></div>
                 :
                 ""
             }
