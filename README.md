@@ -50,6 +50,23 @@ open the folder
 cd Paperpilot
 ```
 
+create environment variables
+
+
+- NEXTAUTH_SECRET [(check here to learn more)](https://next-auth.js.org/configuration/options)
+- NEXT_PUBLIC_SPRINGER_URL [(Use http for local and https inpproduction)](https://dev.springernature.com/)
+- NEXT_PUBLIC_SPRINGER_API_KEY [(Key to connect with the api... Learnmore)](https://dev.springernature.com/)
+- NEXT_PUBLIC_CORE_API_KEY [(Key to connect with the api... Learnmore)](https://core.ac.uk/services/api#what-is-included)
+- NEXT_PUBLIC_IEEE_API_KEY [(Key to connect with the api... Learnmore)](https://developer.ieee.org/member/register)
+- NEXT_PUBLIC_MAIL_USER (Mailing account for sending emails)
+- NEXT_PUBLIC_MAIL_PASSWORD (Mailing account password for sending emails)
+- GITHUB_ID [(For github authentication... learn more)](https://next-auth.js.org/providers/github)
+- GITHUB_SECRET [(For github authentication... learn more)](https://next-auth.js.org/providers/github)
+- GOOGLE_ID [(For google authentication... learn more)](https://next-auth.js.org/providers/google)
+- GOOGLE_SECRET [(For google authentication... learn more)](https://next-auth.js.org/providers/google)
+- MONGODB_URI [(Database comnection address... learn more)](https://www.mongodb.com/docs/)
+
+
 Install the dependencies by running
 
 ```md
